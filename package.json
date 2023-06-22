@@ -48,7 +48,7 @@
     "prettier": "^2.8.8"
   },
   "lint-staged": {
-    "./src/**/.{js,jsx,ts,tsx}": [
+    "./src/**/*.{js,jsx,ts,tsx}": [
       "npm run lint -- --fix"
     ]
   }
