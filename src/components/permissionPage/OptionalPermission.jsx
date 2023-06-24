@@ -2,11 +2,11 @@ import React from 'react';
 
 function OptionalPermission({ src, title, description }) {
   return (
-    <div class="flex border">
-      <img alt="alt" src={src} class="w-[44px] rounded-full mr-[10px]" />
-      <div>
-        <div>{title}</div>
-        <div class="text-deepGray">{description}</div>
+    <div class="flex">
+      <img alt="alt" src={src} class="w-[44px] mr-[26px] rounded-full" />
+      <div class="flex flex-col justify-around">
+        <div class="text-[13px]">{title}</div>
+        <div class="text-[10px] text-deepGray">{description}</div>
       </div>
     </div>
   );
