@@ -1,22 +1,25 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const StyledButton = styled.button`
-  width: 100%;
-  height: 100%;
-  border-radius: 55px;
-  background: ${props => props.background || '#2572E5'};
-  color: FFFFFF;
-  text-align: center;
+const ButtonWrapper = styled.div`
+  bottom: ${props => props.bottom || '56px'};
 `;
 
-function LongButton({ type, contents, onClick, background }) {
+const StyledButton = styled.button`
+  background: ${props => props.background || '#2572E5'};
+`;
+
+function LongButton({ type, contents, onClick, background, bottom }) {
   return (
-    <div className="w-[360px] h-[50px] fixed bottom-[56px] left-1/2 translate-x-[-50%] text-white">
-      <StyledButton type={type} onClick={onClick} background={background}>
+    <ButtonWrapper className="w-[360px] h-[50px] fixed left-1/2 translate-x-[-50%]">
+      <StyledButton
+        className="w-full h-full rounded-[55px] text-white text-center"
+        type={type}
+        onClick={onClick}
+        background={background}>
         {contents}
       </StyledButton>
-    </div>
+    </ButtonWrapper>
   );
 }
 
