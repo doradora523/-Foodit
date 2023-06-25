@@ -2,11 +2,11 @@ import React from 'react';
 import styled from 'styled-components';
 
 const ButtonWrapper = styled.div`
-  bottom: ${props => props.bottom || '56px'};
+  bottom: ${(props) => props.bottom || '56px'};
 `;
 
 const StyledButton = styled.button`
-  background: ${props => props.background || '#2572E5'};
+  background: ${(props) => props.background || '#2572E5'};
 `;
 
 function LongButton({ type, contents, onClick, background, bottom }) {

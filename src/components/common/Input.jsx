@@ -2,8 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 
 const StyledInput = styled.input`
-  width: ${props => props.width || '360px'};
-  margin-bottom: ${props => props.mb || 0};
+  width: ${(props) => props.width || '360px'};
+  margin-bottom: ${(props) => props.mb || 0};
 `;
 
 function Input({ type, onClick, label, placeholder, width, mb, autoComplete }) {
