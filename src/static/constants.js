@@ -25,6 +25,16 @@ const NEAR_LOCATION = '근처 동네';
 const ENTER_INPUT = '검색어를 입력하세요';
 const TOTAL_SEARCHED_OUTPUT = '전체글';
 
+// WritingPage
+const MAX_IMAGES = '이미지 추가 (최대 3개)';
+const ARTICLE_TITLE = '글 제목';
+const CATEGORY = '카테고리';
+const TOTAL_AMOUNT = '총 가격';
+const MAXIMUM_PEOPLE = '최대 희망 인원';
+const DESIRED_PLACE = '거래 희망 장소';
+const PLEASE_WRITE_TEXT = '내용을 작성해주세요';
+const DONE = '완료';
+
 export {
   PERMISSION_FIRST_TITLE,
   PERMISSION_SECOND_TITLE,
@@ -46,4 +56,12 @@ export {
   NEAR_LOCATION,
   ENTER_INPUT,
   TOTAL_SEARCHED_OUTPUT,
+  MAX_IMAGES,
+  ARTICLE_TITLE,
+  CATEGORY,
+  TOTAL_AMOUNT,
+  MAXIMUM_PEOPLE,
+  DESIRED_PLACE,
+  PLEASE_WRITE_TEXT,
+  DONE,
 };
