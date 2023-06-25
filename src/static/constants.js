@@ -21,6 +21,10 @@ const CONFIRM = '확인';
 const SEARCH_LOCATION = '내 동네 이름(동,읍,면)으로 검색';
 const NEAR_LOCATION = '근처 동네';
 
+// SearchPage
+const ENTER_INPUT = '검색어를 입력하세요';
+const TOTAL_SEARCHED_OUTPUT = '전체글';
+
 export {
   PERMISSION_FIRST_TITLE,
   PERMISSION_SECOND_TITLE,
@@ -40,4 +44,6 @@ export {
   CONFIRM,
   SEARCH_LOCATION,
   NEAR_LOCATION,
+  ENTER_INPUT,
+  TOTAL_SEARCHED_OUTPUT,
 };
