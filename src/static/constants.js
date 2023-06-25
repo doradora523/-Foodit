@@ -35,6 +35,9 @@ const DESIRED_PLACE = '거래 희망 장소';
 const PLEASE_WRITE_TEXT = '내용을 작성해주세요';
 const DONE = '완료';
 
+// CategoryListPage
+const SELECT = '선택';
+
 export {
   PERMISSION_FIRST_TITLE,
   PERMISSION_SECOND_TITLE,
@@ -64,4 +67,5 @@ export {
   DESIRED_PLACE,
   PLEASE_WRITE_TEXT,
   DONE,
+  SELECT,
 };
