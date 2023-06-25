@@ -38,6 +38,12 @@ const DONE = '완료';
 // CategoryListPage
 const SELECT = '선택';
 
+// MyPage
+const MY_PAGE = '마이 페이지';
+const SETTING_LOCATION = '내 동네 설정';
+const CHANGE_INFO = '내 정보 변경';
+const LOGOUT = '로그아웃';
+
 export {
   PERMISSION_FIRST_TITLE,
   PERMISSION_SECOND_TITLE,
@@ -68,4 +74,8 @@ export {
   PLEASE_WRITE_TEXT,
   DONE,
   SELECT,
+  MY_PAGE,
+  SETTING_LOCATION,
+  CHANGE_INFO,
+  LOGOUT,
 };
