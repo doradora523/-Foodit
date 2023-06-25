@@ -5,7 +5,7 @@ function SearchBar({ placeholder }) {
   const moveToPermissionPage = () => {};
 
   return (
-    <div class="flex h-[44px]">
+    <div class="flex h-[44px] mt-[47px]">
       <BackButton onClickHandler={moveToPermissionPage} />
       {/* TODO: placeholder 색상 반응형으로 */}
       <input

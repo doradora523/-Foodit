@@ -19,7 +19,7 @@ function SearchPage() {
   const [selectedCategory, setSelectedCategory] = useState(TOTAL_SEARCHED_OUTPUT);
 
   return (
-    <div class="flex flex-col mt-[47px]">
+    <div class="flex flex-col">
       <SearchBar placeholder={ENTER_INPUT} placeholderColor={'white'} />
 
       <div class="flex mx-[15px] mt-[15px] mb-[25px] justify-between items-center">
