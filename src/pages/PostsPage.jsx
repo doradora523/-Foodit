@@ -22,7 +22,7 @@ function PostsPage() {
       text: JOIN_ALERT,
       showCancelButton: true,
       confirmButtonColor: '#2572E5',
-      cancelButtonColor: '#9D9D9D',
+      cancelButtonColor: '#CCCCCC',
       confirmButtonText: CONFIRM,
       cancelButtonText: CANCEL,
       reverseButtons: true,
