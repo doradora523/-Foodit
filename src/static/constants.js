@@ -26,7 +26,7 @@ const ENTER_INPUT = '검색어를 입력하세요';
 const TOTAL_SEARCHED_OUTPUT = '전체글';
 
 // WritingPage
-const MAX_IMAGES = '이미지 추가 (최대 3개)';
+const ADD_IMAGE = '이미지 추가';
 const ARTICLE_TITLE = '글 제목';
 const CATEGORY = '카테고리';
 const TOTAL_AMOUNT = '총 가격';
@@ -78,7 +78,7 @@ export {
   NEAR_LOCATION,
   ENTER_INPUT,
   TOTAL_SEARCHED_OUTPUT,
-  MAX_IMAGES,
+  ADD_IMAGE,
   ARTICLE_TITLE,
   CATEGORY,
   TOTAL_AMOUNT,

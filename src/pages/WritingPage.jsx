@@ -4,7 +4,7 @@ import LongButton from '../components/common/LongButton';
 import Input from '../components/writingPage/Input';
 
 import {
-  MAX_IMAGES,
+  ADD_IMAGE,
   ARTICLE_TITLE,
   CATEGORY,
   TOTAL_AMOUNT,
@@ -37,7 +37,7 @@ function WritingPage() {
               fill="#9D9D9D"
             />
           </svg>
-          {MAX_IMAGES}
+          {ADD_IMAGE}
         </button>
 
         <input
@@ -60,12 +60,12 @@ function WritingPage() {
       </button>
 
       <Input placeholder={ARTICLE_TITLE} />
-      <div class="py-[15px] mx-[15px] text-[13px] text-darkGray border-b-[0.5px]">
+      <div class="py-[15px] mx-[15px] text-[13px] text-darkGray border-b-[0.5px] border-gray">
         <button>{CATEGORY}</button>
       </div>
       <Input placeholder={TOTAL_AMOUNT} />
 
-      <div class="flex py-[15px] mx-[15px] text-[13px] text-darkGray border-b-[0.5px] justify-between">
+      <div class="flex justify-between py-[15px] mx-[15px] text-[13px] text-darkGray border-b-[0.5px] border-gray">
         <div>{MAXIMUM_PEOPLE}</div>
         <div class="flex">
           <button>
