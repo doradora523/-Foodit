@@ -9,6 +9,7 @@ import { SELECT } from '../static/constants';
 function CategoryListPage() {
   return (
     <div>
+      {/* TODO: 공통 컴포넌트로 추후 생성되면 추가 예정 */}
       <TextBar />
       <CategoryList />
       <LongButton contents={SELECT} />
