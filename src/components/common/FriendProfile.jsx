@@ -7,7 +7,7 @@ const Div = styled.div`
 
 function FriendProfile({ name = '', role = '', svg, color }) {
   return (
-    <div class="flex flex-col items-center w-[56px]">
+    <div class="flex flex-col items-center w-[56px] relative">
       <div class="flex flex-col items-center justify-center">
         <Div className="w-[45px] h-[45px] rounded-full" color={color}></Div>
       </div>

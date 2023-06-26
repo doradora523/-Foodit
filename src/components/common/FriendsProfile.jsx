@@ -9,7 +9,7 @@ function FriendsProfile() {
         role="파티장"
         svg={
           <svg
-            class="absolute top-[350px]"
+            class="absolute top-[-12px]"
             width="21"
             height="14"
             viewBox="0 0 21 14"
