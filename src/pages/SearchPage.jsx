@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Select from 'react-select';
 
 import SearchBar from '../components/common/navBar/SearchBar';
-import SearchedOutput from '../components/searchPage/SearchedOutput';
+import SearchedOutputList from '../components/common/SearchedOutputLists';
 
 import { ENTER_INPUT, TOTAL_SEARCHED_OUTPUT } from '../static/constants';
 
@@ -31,17 +31,7 @@ function SearchPage() {
       </div>
 
       <div class="mx-[16px] mb-[15px] text-[13px]">총 {'280,787'}개</div>
-
-      <div class="flex flex-col mx-[15px] mb-[27px] overflow-scroll gap-[20px] h-[520px]">
-        <SearchedOutput />
-        <SearchedOutput />
-        <SearchedOutput />
-        <SearchedOutput />
-        <SearchedOutput />
-        <SearchedOutput />
-        <SearchedOutput />
-        <SearchedOutput />
-      </div>
+      <SearchedOutputList />
     </div>
   );
 }
