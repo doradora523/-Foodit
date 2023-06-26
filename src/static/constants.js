@@ -54,6 +54,9 @@ const DIVISION = '1/N';
 const ACTUAL_PAYMENT_AMOUNT = '실제 결제 금액';
 const JOIN = '참여하기';
 
+// ProfileEditPage
+const EDIT = '수정하기';
+
 export {
   PERMISSION_FIRST_TITLE,
   PERMISSION_SECOND_TITLE,
@@ -96,4 +99,5 @@ export {
   DIVISION,
   ACTUAL_PAYMENT_AMOUNT,
   JOIN,
+  EDIT,
 };
