@@ -1,9 +1,9 @@
 import React from 'react';
 
-function OptionalPermission({ src, title, description }) {
+function OptionalPermission({ svg, title, description }) {
   return (
     <div class="flex">
-      <img alt="alt" src={src} class="w-[44px] mr-[26px] rounded-full" />
+      <div class="flex items-center justify-center w-[44px] h-[44px] mr-[26px] rounded-full bg-gray">{svg}</div>
       <div class="flex flex-col justify-around">
         <div class="text-[13px]">{title}</div>
         <div class="text-[10px] text-deepGray">{description}</div>
