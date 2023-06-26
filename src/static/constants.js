@@ -44,6 +44,16 @@ const SETTING_LOCATION = '내 동네 설정';
 const CHANGE_INFO = '내 정보 변경';
 const LOGOUT = '로그아웃';
 
+// PostsPage
+const JOIN_ALERT = '현재 게시물에 참여하시겠습니까?';
+const CANCEL = '취소';
+const BEFORE = ' 전';
+const SUM = '총 금액';
+const WON = '원';
+const DIVISION = '1/N';
+const ACTUAL_PAYMENT_AMOUNT = '실제 결제 금액';
+const JOIN = '참여하기';
+
 export {
   PERMISSION_FIRST_TITLE,
   PERMISSION_SECOND_TITLE,
@@ -78,4 +88,12 @@ export {
   SETTING_LOCATION,
   CHANGE_INFO,
   LOGOUT,
+  JOIN_ALERT,
+  CANCEL,
+  SUM,
+  WON,
+  BEFORE,
+  DIVISION,
+  ACTUAL_PAYMENT_AMOUNT,
+  JOIN,
 };
