@@ -16,7 +16,8 @@ function LongButton({ type, contents, onClick, background, bottom }) {
         className="w-full h-full rounded-[55px] text-white text-center"
         type={type}
         onClick={onClick}
-        background={background}>
+        background={background}
+      >
         {contents}
       </StyledButton>
     </ButtonWrapper>

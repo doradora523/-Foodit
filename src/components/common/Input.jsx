@@ -16,7 +16,8 @@ function Input({ type, onClick, label, placeholder, width, mb, autoComplete }) {
       label={label}
       placeholder={placeholder}
       onClick={onClick}
-      autoComplete={autoComplete}></StyledInput>
+      autoComplete={autoComplete}
+    ></StyledInput>
   );
 }
 
