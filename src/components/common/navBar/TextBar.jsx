@@ -1,11 +1,9 @@
-import React from 'react';
-import BackButton from './BackButton';
-
-// TODO: 추후 merge할 때 가져올 예정
-function TextBar() {
+function TextBar({ title }) {
   return (
-    <div class="border flex h-[44px] mt-[47px]">
-      <BackButton />
+    <div className="mt-[47px] h-[44px] bg-white">
+      <h2 className="text-center text-ellipsis line-clamp-1 whitespace-normal overflow-hidden leading-[44px] absolute left-1/2 translate-x-[-50%] font-semibold">
+        {title}
+      </h2>
     </div>
   );
 }

@@ -1,15 +1,15 @@
 import React from 'react';
 import FriendProfile from './FriendProfile';
 
-function FriendsProfile() {
+function FriendsProfile({ role }) {
   return (
-    <div class="mt-[22px] flex items-center pb-[11px] gap-[20px] border-b-[0.5px] border-gray">
+    <div className="mt-[22px] flex items-center pb-[11px] gap-[20px] border-b-[0.5px] border-gray">
       <FriendProfile
         name="동네친구"
-        role="파티장"
+        role={role}
         svg={
           <svg
-            class="absolute top-[-12px]"
+            className="absolute top-[-12px]"
             width="21"
             height="14"
             viewBox="0 0 21 14"
@@ -23,9 +23,9 @@ function FriendsProfile() {
           </svg>
         }
       />
-      <FriendProfile name="친구1" role="파티원" color={'#00C92C'} />
-      <FriendProfile name="친구2" role="파티원" color={'#FF6B00'} />
-      <FriendProfile name="파티원3" role="모집대기중" color={'#A4A4A4'} />
+      <FriendProfile name="친구1" role={role} color={'#00C92C'} />
+      <FriendProfile name="친구2" role={role} color={'#FF6B00'} />
+      <FriendProfile name="파티원3" role={role} color={'#A4A4A4'} />
       <FriendProfile color={'#F0F0F0'} />
     </div>
   );

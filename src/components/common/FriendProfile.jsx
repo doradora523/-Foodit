@@ -7,13 +7,13 @@ const Div = styled.div`
 
 function FriendProfile({ name = '', role = '', svg, color }) {
   return (
-    <div class="flex flex-col items-center w-[56px] relative">
-      <div class="flex flex-col items-center justify-center">
+    <div className="flex flex-col items-center w-[56px] relative">
+      <div className="flex flex-col items-center justify-center">
         <Div className="w-[45px] h-[45px] rounded-full" color={color}></Div>
       </div>
       {svg}
-      <div class="h-[20px] text-[13px]">{name}</div>
-      <div class="h-[12px] text-[9px] text-smokeGray">{role}</div>
+      <div className="h-[20px] text-[13px]">{name}</div>
+      <div className="h-[12px] text-[9px] text-smokeGray">{role}</div>
     </div>
   );
 }

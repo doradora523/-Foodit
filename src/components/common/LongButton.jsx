@@ -11,7 +11,7 @@ const StyledButton = styled.button`
 
 function LongButton({ type, contents, onClick, background, bottom, customStyle }) {
   return (
-    <ButtonWrapper className="w-[360px] h-[50px] fixed left-1/2 translate-x-[-50%]">
+    <ButtonWrapper className="w-[360px] h-[50px] fixed left-1/2 translate-x-[-50%]" bottom={bottom}>
       <StyledButton
         className={`w-full h-full rounded-[55px] text-white text-center ${customStyle}`}
         type={type}

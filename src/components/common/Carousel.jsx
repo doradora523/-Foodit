@@ -10,7 +10,7 @@ const Circle = styled.div`
 `;
 
 function Carousel({ carouselColor }) {
-  return <Circle background={carouselColor}></Circle>;
+  return <Circle background={carouselColor} />;
 }
 
 export default Carousel;
