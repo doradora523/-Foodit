@@ -1,5 +1,3 @@
-import React from 'react';
-
 function TextBar({ title }) {
   return (
     <div className="mt-[47px] h-[44px] bg-white">

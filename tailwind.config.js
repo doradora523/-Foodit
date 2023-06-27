@@ -7,8 +7,11 @@ module.exports = {
     colors: {
       white: '#FFFFFF',
       lightGray: '#F0F0F0',
+      hexGray: '#F2F2F2',
       gray: '#D9D9D9',
+      darkGray: '#A4A4A4',
       deepGray: '#9D9D9D',
+      smokeGray: '#6B6B6B',
       mainColor: '#2572E5',
       orange: '#FF6B00',
     },
