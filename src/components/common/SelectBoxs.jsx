@@ -33,7 +33,7 @@ export const MonthSelectBox = () => {
     <div className="relative">
       <SelectBox id="month" defaultValue="월">
         <option disabled>월</option>
-        {months.map(month => (
+        {months.map((month) => (
           <option key={month.id} value={month.value}>
             {month.value}
           </option>
@@ -53,7 +53,7 @@ export const DaySelectBox = () => {
     <div className="relative">
       <SelectBox id="day" defaultValue="일">
         <option disabled>일</option>
-        {days.map(day => (
+        {days.map((day) => (
           <option key={day.id} value={day.value}>
             {day.value}
           </option>

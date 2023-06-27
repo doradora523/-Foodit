@@ -36,7 +36,7 @@ const PostList = () => {
 
   return (
     <div>
-      {postTitle.map(title => (
+      {postTitle.map((title) => (
         <div key={title}>
           <Title title={title} />
           <ul className="flex">
@@ -45,7 +45,8 @@ const PostList = () => {
                 key={post.id}
                 className={`w-[132px] h-[233px] mb-[25px] ${
                   index === posts.length - 1 ? '' : 'mr-[20px]'
-                } cursor-pointer`}>
+                } cursor-pointer`}
+              >
                 <div className="w-[132px] h-[132px] bg-gray overflow-hidden">
                   <img className="w-full" src={post.image} alt="" />
                 </div>

@@ -24,7 +24,8 @@ const WalkthroughPage = () => {
         className="walkthroughWrapper w-[780px] flex transition-all duration-500 ease"
         style={{
           transform: `translateX(${walkthroughPosition}%)`,
-        }}>
+        }}
+      >
         <ImageAndMessage
           opacity={firstImageVisible ? 1 : 0}
           // image 추가할때 props 전달

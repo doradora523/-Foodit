@@ -120,7 +120,7 @@ const ChatPage = () => {
               </p>
             </div>
             <div className="flex flex-column flex-wrap w-full">
-              {chatData.map(chat => (
+              {chatData.map((chat) => (
                 <div key={chat.id} className={`flex ${chat.me ? 'flex-row-reverse w-full' : ''}`}>
                   {!chat.me && (
                     <div className="w-[45px] h-[45px] rounded-full bg-deepGray overflow-hidden">
@@ -132,19 +132,22 @@ const ChatPage = () => {
                     {chat.messages.map((msg, index) => (
                       <div
                         key={index}
-                        className={`flex items-end mb-[10px] ${chat.me ? 'flex-row-reverse' : 'flex-row'}`}>
+                        className={`flex items-end mb-[10px] ${chat.me ? 'flex-row-reverse' : 'flex-row'}`}
+                      >
                         <div
                           key={index}
                           className={`
                         ${chat.me ? 'bg-deepGray rounded-tl-[20px]' : 'bg-mainColor rounded-tr-[20px]'}
-                        max-w-[208px] w-fit text-white text-[13px] leading-[20px] py-[7px] px-[10px] rounded-b-[20px]`}>
+                        max-w-[208px] w-fit text-white text-[13px] leading-[20px] py-[7px] px-[10px] rounded-b-[20px]`}
+                        >
                           <p>{msg.message}</p>
                         </div>
                         {/* 추후 메세지 보낸 시간이 1분 지나면 보여지도록 설정 */}
                         <div
                           className={`text-[10px] text-[#6b6b6b] ${
                             chat.me ? 'text-right mr-[10px]' : 'text-left ml-[10px]'
-                          }`}>
+                          }`}
+                        >
                           {msg.timestamp.substring(14, 22)}
                         </div>
                       </div>

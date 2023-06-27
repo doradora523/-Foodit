@@ -93,10 +93,11 @@ const TabBar = () => {
   return (
     <div className="fixed bottom-0 z-50 h-[85px] w-full border-t-[1px] border-solid border-[#A4A4A4]">
       <ul className="flex justify-between">
-        {Tabs.map(tab => (
+        {Tabs.map((tab) => (
           <li
             key={tab.id}
-            className="flex flex-col items-center justify-end w-[57px] h-[54px] text-[13px] text-center cursor-pointer">
+            className="flex flex-col items-center justify-end w-[57px] h-[54px] text-[13px] text-center cursor-pointer"
+          >
             <div className="w-full flex justify-center">{tab.svg}</div>
             <span>{tab.title}</span>
           </li>

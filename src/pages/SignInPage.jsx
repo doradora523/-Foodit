@@ -12,7 +12,7 @@ const SignInPage = () => {
 
   const navigate = useNavigate();
 
-  const onChangeHandler = event => {
+  const onChangeHandler = (event) => {
     event.preventDefault();
     const { name, value } = event.target;
     if (name === 'email') {

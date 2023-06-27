@@ -9,7 +9,7 @@ const FavoriteButton = () => {
     }
   };
 
-  const handleCategorySelection = category => {
+  const handleCategorySelection = (category) => {
     setSelectedCategory(category);
   };
 

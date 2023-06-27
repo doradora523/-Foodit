@@ -2,11 +2,11 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Wrapper = styled.div`
-  opacity: ${props => props.opacity};
+  opacity: ${(props) => props.opacity};
 `;
 
 const SubTitle = styled.h1`
-  color: ${props => props.color || '#00c92c'};
+  color: ${(props) => props.color || '#00c92c'};
 `;
 
 function ImageAndMessage({ mainMessage, subMessage, color, opacity }) {

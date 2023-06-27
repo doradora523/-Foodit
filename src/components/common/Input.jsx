@@ -2,9 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 
 const StyledInput = styled.input`
-  width: ${props => props.width || '360px'};
-  margin-bottom: ${props => props.mb || 0};
-  border-color: ${props => props.color};
+  width: ${(props) => props.width || '360px'};
+  margin-bottom: ${(props) => props.mb || 0};
+  border-color: ${(props) => props.color};
 `;
 
 function Input({ type, onChange, placeholder, name, width, mb, color, autoComplete }) {
