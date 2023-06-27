@@ -3,6 +3,7 @@ import React from 'react';
 import Category from './Category';
 import { TEMPORARY_SRC } from '../../static/constants';
 
+// TODO: 하드코딩된 값 constants로 추후 변경 예정
 function CategoryList() {
   return (
     <div class="flex justify-center mx-[19px]">
