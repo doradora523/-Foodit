@@ -3,7 +3,7 @@ import FriendProfile from './FriendProfile';
 
 function FriendsProfile() {
   return (
-    <div class="mt-[22px] flex items-center mx-[15px] pb-[11px] gap-[20px] border-b-[0.5px] border-gray">
+    <div class="mt-[22px] flex items-center pb-[11px] gap-[20px] border-b-[0.5px] border-gray">
       <FriendProfile
         name="동네친구"
         role="파티장"

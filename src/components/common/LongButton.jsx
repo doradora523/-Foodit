@@ -9,11 +9,11 @@ const StyledButton = styled.button`
   background: ${(props) => props.background || '#2572E5'};
 `;
 
-function LongButton({ type, contents, onClick, background, bottom }) {
+function LongButton({ type, contents, onClick, background, bottom, customStyle }) {
   return (
     <ButtonWrapper className="w-[360px] h-[50px] fixed left-1/2 translate-x-[-50%]">
       <StyledButton
-        className="w-full h-full rounded-[55px] text-white text-center"
+        className={`w-full h-full rounded-[55px] text-white text-center ${customStyle}`}
         type={type}
         onClick={onClick}
         background={background}

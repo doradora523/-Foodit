@@ -29,9 +29,8 @@ const TOTAL_SEARCHED_OUTPUT = '전체글';
 const ADD_IMAGE = '이미지 추가';
 const ARTICLE_TITLE = '글 제목';
 const CATEGORY = '카테고리';
-const TOTAL_AMOUNT = '총 가격';
+const TOTAL_AMOUNT = '총 가격 (ex. 35000)';
 const MAXIMUM_PEOPLE = '희망 인원 (최대 4명)';
-const DESIRED_PLACE = '거래 희망 장소';
 const PLEASE_WRITE_TEXT = '내용을 작성해주세요';
 const DONE = '완료';
 
@@ -83,7 +82,6 @@ export {
   CATEGORY,
   TOTAL_AMOUNT,
   MAXIMUM_PEOPLE,
-  DESIRED_PLACE,
   PLEASE_WRITE_TEXT,
   DONE,
   SELECT,
