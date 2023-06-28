@@ -7,10 +7,10 @@ import IdPasswordForm from '../components/common/IdPasswordForm';
 
 const RegisterPage = () => {
   const inputFields = [
-    { id: 'email', label: '아이디', type: 'email' },
-    { id: 'password', label: '비밀번호', type: 'password' },
-    { id: 'passwordCheck', label: '비밀번호 재확인', type: 'password' },
-    { id: 'nickname', label: '닉네임', type: 'text' },
+    { id: 'email', label: '아이디', type: 'email'},
+    { id: 'password', label: '비밀번호', type: 'password'},
+    { id: 'passwordCheck', label: '비밀번호 재확인', type: 'password'},
+    { id: 'nickname', label: '닉네임', type: 'text'},
   ];
   const nicknameField = inputFields.find((field) => field.id === 'nickname');
 
@@ -35,6 +35,7 @@ const RegisterPage = () => {
 
     if (name === 'email') {
       setEmail(value);
+      console.log(value);
       validationErrors.email = {
         message:
           value.trim() === ''
@@ -141,7 +142,6 @@ const RegisterPage = () => {
                 key={field.id}
                 label={field.label}
                 type={field.type}
-                value={field.id}
                 color={errors[field.id].isError ? '#ff0000' : '#d9d9d9'}
                 onChange={(event) => validateField(field.id, event.target.value)}
                 errors={errors[field.id]}
@@ -159,7 +159,7 @@ const RegisterPage = () => {
                 name={nicknameField.id}
                 autoComplete="off"
                 type={nicknameField.type}
-                value={nicknameField.id}
+                value={nicknameField.value}
                 color={errors.nickname.isError ? '#ff0000' : '#d9d9d9'}
                 onChange={(event) => validateField('nickname', event.target.value)}
               />

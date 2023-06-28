@@ -1,6 +1,7 @@
 import React from 'react';
 import Title from './Title';
 
+// 해당 페이지 프로젝트 기간 이후 개발예정
 const PostList = () => {
   const postTitle = ['실시간 인기글', '방금 올라온 글', '나를 위한 추천'];
   const posts = [
