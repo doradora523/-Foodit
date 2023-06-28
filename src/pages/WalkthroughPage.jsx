@@ -5,7 +5,7 @@ import ImageAndMessage from '../components/common/ImageAndMessage';
 import LongButton from '../components/common/LongButton';
 
 const WalkthroughPage = () => {
-  const [carouselColor, setCarouselColor] = useState(['#2572e5', '#d9d9d9']);
+  const [carouselColor, setCarouselColor] = useState(['#00c92c', '#d9d9d9']);
   const [walkthroughPosition, setWalkthroughPosition] = useState(0);
   const [firstImageVisible, setFirstImageVisible] = useState(true);
   const [buttonClicked, setButtonClicked] = useState(false);
@@ -15,7 +15,7 @@ const WalkthroughPage = () => {
     if (buttonClicked) {
       navigate('/signin');
     } else {
-      setCarouselColor(['#d9d9d9', '#2572e5']);
+      setCarouselColor(['#d9d9d9', '#00c92c']);
       setFirstImageVisible(false);
       if (firstImageVisible) {
         setTimeout(() => {
