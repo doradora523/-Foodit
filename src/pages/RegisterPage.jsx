@@ -1,16 +1,17 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Input from '../components/common/Input';
 import TextAndBackBar from '../components/common/navBar/TextAndBackBar';
 import LongButton from '../components/common/LongButton';
 import IdPasswordForm from '../components/common/IdPasswordForm';
+import { debounce } from 'lodash';
 
 const RegisterPage = () => {
   const inputFields = [
-    { id: 'email', label: '아이디', type: 'email'},
-    { id: 'password', label: '비밀번호', type: 'password'},
-    { id: 'passwordCheck', label: '비밀번호 재확인', type: 'password'},
-    { id: 'nickname', label: '닉네임', type: 'text'},
+    { id: 'email', label: '아이디', type: 'email' },
+    { id: 'password', label: '비밀번호', type: 'password' },
+    { id: 'passwordCheck', label: '비밀번호 재확인', type: 'password' },
+    { id: 'nickname', label: '닉네임', type: 'text' },
   ];
   const nicknameField = inputFields.find((field) => field.id === 'nickname');
 
@@ -29,56 +30,57 @@ const RegisterPage = () => {
   });
   const navigate = useNavigate();
 
-  // 유효성 검사
-  const validateField = (name, value) => {
-    const validationErrors = { ...errors };
+  const validateField = useCallback(
+    debounce((name, value) => {
+      const validationErrors = { ...errors };
 
-    if (name === 'email') {
-      setEmail(value);
-      console.log(value);
-      validationErrors.email = {
-        message:
-          value.trim() === ''
-            ? '아이디를 입력해주세요.'
-            : emailRegex.test(value)
-            ? value === existedEmail
-              ? '이미 사용중인 아이디입니다.'
-              : ''
-            : '유효한 이메일 형식이 아닙니다.',
-        isError: value.trim() === '' || !emailRegex.test(value) || value === existedEmail,
-      };
-    } else if (name === 'password') {
-      setPassword(value);
-      validationErrors.password = {
-        message:
-          value.trim() === ''
-            ? '8~16자리의 비밀번호를 입력해주세요.'
-            : value.length < 8 || value.length > 16
-            ? '비밀번호는 8~16자리여야 합니다.'
-            : '',
-        isError: value.trim() === '' || value.length < 8 || value.length > 16,
-      };
-    } else if (name === 'passwordCheck') {
-      setPasswordCheck(value);
-      validationErrors.passwordCheck = {
-        message:
-          value.trim() === ''
-            ? '확인을 위하여 위와 동일하게 입력해주세요.'
-            : value !== password
-            ? '비밀번호가 일치하지 않습니다.'
-            : '',
-        isError: value.trim() === '' || value !== password,
-      };
-    } else if (name === 'nickname') {
-      setNickname(value);
-      validationErrors.nickname = {
-        message: value.trim() === '' ? '닉네임을 입력해주세요.' : '',
-        isError: value.trim() === '',
-      };
-    }
+      if (name === 'email') {
+        setEmail(value);
+        validationErrors.email = {
+          message:
+            value.trim() === ''
+              ? '아이디를 입력해주세요.'
+              : emailRegex.test(value)
+              ? value === existedEmail
+                ? '이미 사용중인 아이디입니다.'
+                : ''
+              : '유효한 이메일 형식이 아닙니다.',
+          isError: value.trim() === '' || !emailRegex.test(value) || value === existedEmail,
+        };
+      } else if (name === 'password') {
+        setPassword(value);
+        validationErrors.password = {
+          message:
+            value.trim() === ''
+              ? '8~16자리의 비밀번호를 입력해주세요.'
+              : value.length < 8 || value.length > 16
+              ? '비밀번호는 8~16자리여야 합니다.'
+              : '',
+          isError: value.trim() === '' || value.length < 8 || value.length > 16,
+        };
+      } else if (name === 'passwordCheck') {
+        setPasswordCheck(value);
+        validationErrors.passwordCheck = {
+          message:
+            value.trim() === ''
+              ? '확인을 위하여 위와 동일하게 입력해주세요.'
+              : value !== password
+              ? '비밀번호가 일치하지 않습니다.'
+              : '',
+          isError: value.trim() === '' || value !== password,
+        };
+      } else if (name === 'nickname') {
+        setNickname(value);
+        validationErrors.nickname = {
+          message: value.trim() === '' ? '닉네임을 입력해주세요.' : '',
+          isError: value.trim() === '',
+        };
+      }
 
-    setErrors(validationErrors);
-  };
+      setErrors(validationErrors);
+    }, 300),
+    [errors, emailRegex, existedEmail, setEmail, setPassword, setPasswordCheck, setNickname],
+  );
 
   // 유효성검사 확인 후 폼제출
   const handleSubmit = (event) => {
@@ -137,16 +139,14 @@ const RegisterPage = () => {
         <div className="flex flex-wrap w-[360px]">
           {/* 아이디, 비밀번호, 비밀번호 재확인 */}
           {inputFields.slice(0, 3).map((field) => (
-            <React.Fragment key={field.id}>
-              <IdPasswordForm
-                key={field.id}
-                label={field.label}
-                type={field.type}
-                color={errors[field.id].isError ? '#ff0000' : '#d9d9d9'}
-                onChange={(event) => validateField(field.id, event.target.value)}
-                errors={errors[field.id]}
-              />
-            </React.Fragment>
+            <IdPasswordForm
+              key={field.id}
+              label={field.label}
+              type={field.type}
+              color={errors[field.id].isError ? '#ff0000' : '#d9d9d9'}
+              onChange={(event) => validateField(field.id, event.target.value)}
+              errors={errors[field.id]}
+            />
           ))}
 
           {/* 닉네임 */}
