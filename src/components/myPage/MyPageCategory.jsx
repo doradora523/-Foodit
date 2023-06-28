@@ -7,8 +7,8 @@ const Button = styled.button`
 
 function MyPageCategory({ name, color }) {
   return (
-    <div class="flex mb-[29px]">
-      <div class="w-[30px] h-[30px] ml-[15px] mr-[26px] bg-gray">
+    <div className="flex mb-[29px]">
+      <div className="w-[30px] h-[30px] ml-[15px] mr-[26px] bg-gray">
         {/* <img alt="myPageCategory" src={TEMPORARY_SRC} /> */}
       </div>
       <Button className="text-[16px] text-medium" color={color}>

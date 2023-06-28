@@ -21,6 +21,10 @@ const CONFIRM = '확인';
 const SEARCH_LOCATION = '내 동네 이름(동,읍,면)으로 검색';
 const NEAR_LOCATION = '근처 동네';
 
+// RegisterLocationCompletePage
+const MOVE_TO_HOME = '홈으로 가기';
+const REGISTER_LOCATION_COMPLETE = '위치등록 완료';
+
 // SearchPage
 const ENTER_INPUT = '검색어를 입력하세요';
 const TOTAL_SEARCHED_OUTPUT = '전체글';
@@ -98,4 +102,6 @@ export {
   ACTUAL_PAYMENT_AMOUNT,
   JOIN,
   EDIT,
+  MOVE_TO_HOME,
+  REGISTER_LOCATION_COMPLETE,
 };
