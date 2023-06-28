@@ -14,7 +14,6 @@ const StyledInput = styled.input`
 `;
 
 function Input({ type, onChange, placeholder, name, value, width, mb, color, autoComplete, readOnly }) {
-
   return (
     <StyledInput
       className="h-[48px] border-[1px] border-solid border-gray rounded-[10px] text-[14px] indent-[20px] placeholder-[#d9d9d9]"
