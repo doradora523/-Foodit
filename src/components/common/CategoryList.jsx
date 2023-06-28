@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import Category from './Category';
 import { TEMPORARY_SRC } from '../../static/constants';
@@ -18,6 +18,7 @@ import vegetable from '../../images/vegetable.png';
 
 // TODO: 하드코딩된 값 constants로 추후 변경 예정
 function CategoryList() {
+
   return (
     <div className="flex justify-center mx-[19px]">
       <div className="flex items-center flex-wrap gap-x-[20px] gap-y-[29px] w-[360px] mt-[25px] justify-between">

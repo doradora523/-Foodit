@@ -38,6 +38,11 @@ const SignInPage = () => {
     } catch (error) {}
   };
 
+  /** 게스트 전용 - 추후 Public으로 재연결 */
+  const handleMoveHome = () => {
+    navigate('/');
+  };
+
   const handleMoveRegisterPage = () => {
     navigate('/register');
   };
@@ -68,7 +73,9 @@ const SignInPage = () => {
       </form>
       <LongButton type={'submit'} contents={'로그인'} bottom={'405px'} onClick={handleSignIn} />
       <div className="w-full h-[44px] px-[15px] fixed top-[444px] left-1/2 translate-x-[-50%] flex flex-nowrap justify-between text-[13px] text-gray text-center leading-[44px]">
-        <p className="cursor-pointer">게스트 로그인</p>
+        <p className="cursor-pointer" onClick={handleMoveHome}>
+          게스트 로그인
+        </p>
         <p className="cursor-pointer" onClick={handleMoveRegisterPage}>
           회원가입
         </p>

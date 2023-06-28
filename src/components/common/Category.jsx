@@ -1,14 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 function Category({ src, firstName, lastName = '' }) {
-  // TODO: 카테고리 클릭 시 즐겨찾기에 해당 카테고리 추가
-  const onClick = (selectedCategory) => {
-    console.log(selectedCategory);
+  const [selectedCategory, setSelectedCategory] = useState(null);
+
+  // TODO: 하단 선택 버튼을 없애고 바로 홈으로
+  const onCategorySelect = (src, name) => {
+    setSelectedCategory(src, name);
   };
 
+  const onClick = () => {};
+  
   return (
     <div
-      className="flex flex-col items-center w-[1/5px] h-[90px]"
+      className="flex flex-col items-center w-[1/5px] h-[90px] cursor-pointer"
+      // onClick={onCategorySelect(src, lastName === '' ? firstName : `${firstName}/${lastName}`)}
       onClick={() => onClick(lastName === '' ? firstName : `${firstName}/${lastName}`)}
     >
       <button>

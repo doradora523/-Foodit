@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useState, useEffect, useCallback } from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 const TabBar = () => {
   const Tabs = [
@@ -90,36 +90,58 @@ const TabBar = () => {
   ];
 
   const [activeTab, setActiveTab] = useState('TabHome');
-  const [isTrue, setIsTrue] = useState(false);
   const navigate = useNavigate();
+  const location = useLocation();
 
-  // useEffect(() => {
-  //   setActiveTab(activeTab);
-  //   if (isTrue) {
-  //     if (activeTab === 'TabHome') navigate('/');
-  //     else if (activeTab === 'TabCategories') navigate('/category');
-  //     else if (activeTab === 'TabAddPost') navigate('/writing');
-  //     else if (activeTab === 'TabChat') navigate('/chatlist');
-  //     else if (activeTab === 'TabMyPage') navigate('/myPage');
-  //   }
+  const changeTab = (tabId) => {
+    if (activeTab === tabId) {
+      return; // 이미 선택된 탭인 경우 더 이상 처리하지 않음
+    }
 
-  // }, [activeTab, navigate]);
+    // navigate 호출
+    let path = '/';
+    if (tabId === 'TabCategories') {
+      path = '/category';
+    } else if (tabId === 'TabAddPost') {
+      path = '/writing';
+    } else if (tabId === 'TabChat') {
+      path = '/chatlist';
+    } else if (tabId === 'TabMyPage') {
+      path = '/myPage';
+    }
 
-  const changeTab = (tabId, idx) => {
-    setActiveTab(Tabs[idx].title);
-    console.log(activeTab);
+    navigate(path);
   };
+
+  useEffect(() => {
+    const currentPath = location.pathname;
+    let tabId = 'TabHome';
+
+    if (currentPath === '/') {
+      tabId = 'TabHome';
+    } else if (currentPath === '/category') {
+      tabId = 'TabCategories';
+    } else if (currentPath === '/writing') {
+      tabId = 'TabAddPost';
+    } else if (currentPath === '/chatlist') {
+      tabId = 'TabChat';
+    } else if (currentPath === '/myPage') {
+      tabId = 'TabMyPage';
+    }
+
+    setActiveTab(tabId);
+  }, [location.pathname]);
 
   return (
     <div className="fixed px-[15px] bottom-0 z-50 h-[85px] w-full border-t-[0.5px] border-solid border-[#A4A4A4]">
       <ul className="flex justify-between">
-        {Tabs.map((tab, idx) => (
+        {Tabs.map((tab) => (
           <li
             key={tab.id}
             className={`flex flex-col items-center justify-end w-[57px] h-[54px] text-[13px] text-center cursor-pointer ${
               tab.id === activeTab ? 'text-orange' : 'text-gray'
             }`}
-            onClick={() => changeTab(tab.id, idx)}
+            onClick={() => changeTab(tab.id)}
           >
             <div className="w-full flex justify-center">{tab.svg}</div>
             <span>{tab.title}</span>
