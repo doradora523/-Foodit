@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 
 const TabBar = () => {
@@ -94,21 +94,12 @@ const TabBar = () => {
   const location = useLocation();
 
   const changeTab = (tabId) => {
-    if (activeTab === tabId) {
-      return; // 이미 선택된 탭인 경우 더 이상 처리하지 않음
-    }
-
-    // navigate 호출
     let path = '/';
-    if (tabId === 'TabCategories') {
-      path = '/category';
-    } else if (tabId === 'TabAddPost') {
-      path = '/writing';
-    } else if (tabId === 'TabChat') {
-      path = '/chatlist';
-    } else if (tabId === 'TabMyPage') {
-      path = '/myPage';
-    }
+
+    if (tabId === 'TabCategories') path = '/category';
+    else if (tabId === 'TabAddPost') path = '/writing';
+    else if (tabId === 'TabChat') path = '/chatlist';
+    else if (tabId === 'TabMyPage') path = '/myPage';
 
     navigate(path);
   };
@@ -117,17 +108,11 @@ const TabBar = () => {
     const currentPath = location.pathname;
     let tabId = 'TabHome';
 
-    if (currentPath === '/') {
-      tabId = 'TabHome';
-    } else if (currentPath === '/category') {
-      tabId = 'TabCategories';
-    } else if (currentPath === '/writing') {
-      tabId = 'TabAddPost';
-    } else if (currentPath === '/chatlist') {
-      tabId = 'TabChat';
-    } else if (currentPath === '/myPage') {
-      tabId = 'TabMyPage';
-    }
+    if (currentPath === '/') tabId = 'TabHome';
+    else if (currentPath === '/category') tabId = 'TabCategories';
+    else if (currentPath === '/writing') tabId = 'TabAddPost';
+    else if (currentPath === '/chatlist') tabId = 'TabChat';
+    else if (currentPath === '/myPage') tabId = 'TabMyPage';
 
     setActiveTab(tabId);
   }, [location.pathname]);
