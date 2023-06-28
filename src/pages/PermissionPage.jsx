@@ -1,9 +1,5 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-<<<<<<< HEAD
-
-=======
->>>>>>> e7f63a3 (design: registerLocationPage CSS 수정)
 import OptionalPermission from '../components/permissionPage/OptionalPermission';
 import LongButton from '../components/common/LongButton';
 
