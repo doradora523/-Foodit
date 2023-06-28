@@ -12,7 +12,7 @@ function SearchBar({ placeholder }) {
       <BackButton onClick={handleMoveBack} />
       <input
         placeholder={placeholder}
-        className="w-[100%] mr-[15px] px-[27px] rounded-[5px] bg-lightGray placeholder-deepGray text-[13px]"
+        className="w-[100%] mr-[15px] px-[27px] rounded-[5px] bg-lightGray placeholder-deepGray text-[13px] focus:outline-none"
       />
     </div>
   );

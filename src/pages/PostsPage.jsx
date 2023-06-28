@@ -23,7 +23,7 @@ function PostsPage() {
     Swal.fire({
       text: JOIN_ALERT,
       showCancelButton: true,
-      confirmButtonColor: '#2572E5',
+      confirmButtonColor: '#39B54A',
       cancelButtonColor: '#CCCCCC',
       confirmButtonText: CONFIRM,
       cancelButtonText: CANCEL,

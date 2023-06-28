@@ -10,7 +10,7 @@ function CategoryPage() {
   return (
     <div>
       <SearchBar placeholder={ENTER_INPUT} placeholderColor={'white'} />
-      <div className="h-[39px] mx-[15px] mt-[20px] border-b-[0.5px] text-[13px]">카테고리</div>
+      <div className="h-[39px] mx-[15px] mt-[20px] border-b-[0.5px] border-deepGray text-[13px]">카테고리</div>
       <CategoryList />
       <TabBar />
     </div>

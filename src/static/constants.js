@@ -27,7 +27,7 @@ const REGISTER_LOCATION_COMPLETE = '위치등록 완료';
 
 // SearchPage
 const ENTER_INPUT = '검색어를 입력하세요';
-const TOTAL_SEARCHED_OUTPUT = '전체글';
+const TOTAL_SEARCHED_OUTPUT = '전체';
 
 // WritingPage
 const ADD_IMAGE = '이미지 추가';

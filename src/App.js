@@ -19,7 +19,7 @@ import RegisterLocationCompletePage from './pages/RegisterLocationCompletePage';
 import CategoryPage from './pages/CategoryPage';
 import SearchPage from './pages/SearchPage';
 import MyPage from './pages/MyPage';
-import ProfileEditPage from './pages/ProfileEditPage';
+import EditProfilePage from './pages/EditProfilePage';
 
 function App() {
   return (
@@ -43,7 +43,7 @@ function App() {
           <Route path="/writing" element={<WritingPage />} />
           <Route path="/posts" element={<PostsPage />} />
           <Route path="/myPage" element={<MyPage />} />
-          <Route path="/profileEdit" element={<ProfileEditPage />} />
+          <Route path="/editProfile" element={<EditProfilePage />} />
         </Routes>
       </div>
     </div>
