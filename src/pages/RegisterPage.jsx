@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
-import Input from '../components/common/Input';
 import TextAndBackBar from '../components/common/navBar/TextAndBackBar';
 import LongButton from '../components/common/LongButton';
 import IdPasswordForm from '../components/common/IdPasswordForm';
@@ -85,9 +84,7 @@ const RegisterPage = () => {
   // 유효성검사 확인 후 폼제출
   const handleSubmit = (event) => {
     event.preventDefault();
-
     const validationErrors = {};
-
     inputFields.forEach((field) => {
       if (field.id === 'email' && email.trim() === '') {
         validationErrors[field.id] = { message: `${field.label}를 입력해주세요.`, isError: true };
@@ -106,9 +103,9 @@ const RegisterPage = () => {
       }
     });
 
-    setErrors(validationErrors);
-
     const isFormValid = Object.values(validationErrors).every((error) => !error.isError);
+
+    setErrors(validationErrors);
 
     if (isFormValid) {
       console.log('회원가입이 완료되었습니다.');
@@ -148,28 +145,18 @@ const RegisterPage = () => {
               errors={errors[field.id]}
             />
           ))}
-
           {/* 닉네임 */}
-          <div className="h-[77px] mb-[40px]">
-            <label className="w-full text-[14px]" htmlFor={nicknameField.id}>
-              {nicknameField.label}
-            </label>
-            <div className="relative mt-[10px]">
-              <Input
-                name={nicknameField.id}
-                autoComplete="off"
-                type={nicknameField.type}
-                value={nicknameField.value}
-                color={errors.nickname.isError ? '#ff0000' : '#d9d9d9'}
-                onChange={(event) => validateField('nickname', event.target.value)}
-              />
-            </div>
-            {errors.nickname && (
-              <span className="text-[13px] text-gray" style={{ color: errors.nickname.isError && '#ff0000' }}>
-                {errors.nickname.message}
-              </span>
-            )}
-          </div>
+          {nicknameField && (
+            <IdPasswordForm
+              key="nickname"
+              autoComplete="off"
+              label={nicknameField.label}
+              type={nicknameField.type}
+              color={errors.nickname.isError ? '#ff0000' : '#d9d9d9'}
+              onChange={(event) => validateField('nickname', event.target.value)}
+              errors={errors.nickname}
+            />
+          )}
         </div>
       </form>
       <LongButton contents={'가입하기'} onClick={handleSubmit} />

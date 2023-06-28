@@ -2,7 +2,6 @@ import React from 'react';
 import Input from './Input';
 
 const IdPasswordForm = ({ label, type, value, onChange, color, errors, readOnly }) => {
-  
   return (
     <div className="h-[77px] mb-[40px]">
       <label className="w-full text-[14px]" htmlFor={label}>
