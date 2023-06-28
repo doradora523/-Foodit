@@ -3,6 +3,7 @@ import Select from 'react-select';
 
 import SearchBar from '../components/common/navBar/SearchBar';
 import SearchedOutputList from '../components/common/SearchedOutputLists';
+import TabBar from '../components/common/navBar/TabBar';
 
 import { ENTER_INPUT, TOTAL_SEARCHED_OUTPUT } from '../static/constants';
 
@@ -32,6 +33,7 @@ function SearchPage() {
 
       <div className="mx-[16px] mb-[15px] text-[13px]">총 {'280,787'}개</div>
       <SearchedOutputList />
+      <TabBar />
     </div>
   );
 }
