@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import NearLoacation from '../components/registerLocationPage/NearLoacation';
 import SearchBar from '../components/common/navBar/SearchBar';
@@ -7,8 +8,9 @@ import ShowCase from '../components/common/ShowCase';
 import { SEARCH_LOCATION, NEAR_LOCATION } from '../static/constants';
 
 function RegisterLocationPage() {
+  const navigate = useNavigate();
   const onClick = () => {
-    console.log('클릭');
+    navigate('/register-complete');
   };
   return (
     <div className="flex flex-col">
