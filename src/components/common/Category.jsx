@@ -1,8 +1,10 @@
 import React from 'react';
 
 function Category({ src, firstName, lastName = '' }) {
-  // TODO: 하단 선택 버튼을 없애고 바로 홈으로
-  const onClick = (selectedCategory) => {};
+  // TODO: 카테고리 클릭 시 즐겨찾기에 해당 카테고리 추가
+  const onClick = (selectedCategory) => {
+    console.log(selectedCategory);
+  };
 
   return (
     <div
