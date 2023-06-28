@@ -12,6 +12,8 @@ const RegisterPage = () => {
     { id: 'passwordCheck', label: '비밀번호 재확인', type: 'password' },
     { id: 'nickname', label: '닉네임', type: 'text' },
   ];
+  const nicknameField = inputFields.find((field) => field.id === 'nickname');
+
   const emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
   const existedEmail = 'test@test.com';
 
@@ -149,15 +151,15 @@ const RegisterPage = () => {
 
           {/* 닉네임 */}
           <div className="h-[77px] mb-[40px]">
-            <label className="w-full text-[14px]" htmlFor="nickname">
-              닉네임
+            <label className="w-full text-[14px]" htmlFor={nicknameField.id}>
+              {nicknameField.label}
             </label>
             <div className="relative mt-[10px]">
               <Input
-                name="nickname"
+                name={nicknameField.id}
                 autoComplete="off"
-                type="text"
-                value={inputFields.id === 'nickname'}
+                type={nicknameField.type}
+                value={nicknameField.id}
                 color={errors.nickname.isError ? '#ff0000' : '#d9d9d9'}
                 onChange={(event) => validateField('nickname', event.target.value)}
               />
