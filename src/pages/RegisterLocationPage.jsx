@@ -8,8 +8,8 @@ import { SEARCH_LOCATION, NEAR_LOCATION } from '../static/constants';
 
 function RegisterLocationPage() {
   const onClick = () => {
-    console.log('클릭')
-  }
+    console.log('클릭');
+  };
   return (
     <div className="flex flex-col">
       <SearchBar placeholder={SEARCH_LOCATION} />

@@ -5,11 +5,10 @@ import BackButton from './BackButton';
 
 function SearchBar({ placeholder }) {
   const navigate = useNavigate();
-  const handleMoveBack = () => navigate(-1);
 
   return (
     <div className="flex h-[44px] mt-[47px]">
-      <BackButton onClick={handleMoveBack} />
+      <BackButton />
       <input
         placeholder={placeholder}
         class="w-[100%] mr-[15px] px-[27px] rounded-[5px] bg-[#F0F0F0] placeholder-gray text-[13px]"
