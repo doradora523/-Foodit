@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import OptionalPermission from '../components/permissionPage/OptionalPermission';
 import LongButton from '../components/common/LongButton';
@@ -22,9 +23,12 @@ import {
 } from '../static/constants';
 
 function PermissionPage() {
+  const navigate = useNavigate();
+  const moveToRegisterLocationPage = () => navigate('/registerLocation');
+
   return (
-    <div class="pt-[136px] relative">
-      <div class="h-[50px] pl-[16px] text-[16px] font-semibold">
+    <div className="pt-[136px] relative">
+      <div className="h-[50px] pl-[16px] text-[16px] font-semibold">
         <div>
           {PERMISSION_FIRST_TITLE}
           <br />
@@ -32,11 +36,11 @@ function PermissionPage() {
         </div>
       </div>
 
-      <div class="flex items-center h-[26px] mt-[26px] mb-[14px] pl-[15px] text-deepGray text-[10px]">
+      <div className="flex items-center h-[26px] mt-[26px] mb-[14px] pl-[15px] text-deepGray text-[10px]">
         {SELECT_PERMISSION}
       </div>
 
-      <div class="flex flex-col h-[280px] pl-[15px] justify-between">
+      <div className="flex flex-col h-[280px] pl-[15px] justify-between">
         <OptionalPermission
           svg={
             <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -94,17 +98,31 @@ function PermissionPage() {
               />
             </svg>
           }
+          title={MIKE}
+          description={MIKE_DESCRIPTION}
+        />
+        <OptionalPermission
+          svg={
+            <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M19.3441 2.91332C19.1932 2.76243 19.014 2.64275 18.8168 2.56111C18.6197 2.47947 18.4083 2.43747 18.1949 2.4375H4.78461C4.47636 2.43743 4.17113 2.4981 3.88633 2.61603C3.60154 2.73396 3.34277 2.90684 3.1248 3.1248C2.90684 3.34277 2.73396 3.60154 2.61603 3.88633C2.4981 4.17113 2.43743 4.47636 2.4375 4.78461V21.2154C2.43743 21.5236 2.4981 21.8289 2.61603 22.1137C2.73396 22.3985 2.90684 22.6572 3.1248 22.8752C3.34277 23.0932 3.60154 23.266 3.88633 23.384C4.17113 23.5019 4.47636 23.5626 4.78461 23.5625H21.2154C21.8373 23.5606 22.4332 23.3127 22.873 22.873C23.3127 22.4332 23.5606 21.8373 23.5625 21.2154V7.80508C23.5625 7.59167 23.5205 7.38034 23.4389 7.18316C23.3572 6.98598 23.2376 6.80682 23.0867 6.6559L19.3441 2.91332ZM13 21.125C12.3572 21.125 11.7289 20.9344 11.1944 20.5773C10.6599 20.2202 10.2434 19.7126 9.99739 19.1187C9.75141 18.5249 9.68705 17.8714 9.81245 17.241C9.93785 16.6105 10.2474 16.0314 10.7019 15.5769C11.1564 15.1224 11.7355 14.8128 12.366 14.6874C12.9964 14.562 13.6499 14.6264 14.2437 14.8724C14.8376 15.1184 15.3452 15.5349 15.7023 16.0694C16.0594 16.6039 16.25 17.2322 16.25 17.875C16.2505 18.3019 16.1668 18.7248 16.0037 19.1194C15.8406 19.5139 15.6012 19.8724 15.2993 20.1743C14.9974 20.4762 14.6389 20.7156 14.2444 20.8787C13.8498 21.0418 13.4269 21.1255 13 21.125ZM15.4375 9.75H5.6875C5.47201 9.75 5.26535 9.6644 5.11298 9.51202C4.9606 9.35965 4.875 9.15299 4.875 8.9375V5.6875C4.875 5.47201 4.9606 5.26535 5.11298 5.11298C5.26535 4.9606 5.47201 4.875 5.6875 4.875H15.4375C15.653 4.875 15.8597 4.9606 16.012 5.11298C16.1644 5.26535 16.25 5.47201 16.25 5.6875V8.9375C16.25 9.15299 16.1644 9.35965 16.012 9.51202C15.8597 9.6644 15.653 9.75 15.4375 9.75Z"
+                stroke="white"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          }
           title={STORAGE}
           description={STORAGE_DESCRIPTION}
         />
-        <OptionalPermission svg={''} title={MIKE} description={MIKE_DESCRIPTION} />
       </div>
 
-      <div class="flex items-center w-[360px] h-[50px] mt-[26px] ml-[15px] px-[27px] rounded-[10px] bg-lightGray text-[10px] text-deepGray">
+      <div className="flex items-center w-[360px] h-[50px] mt-[26px] ml-[15px] px-[27px] rounded-[10px] bg-lightGray text-[10px] text-deepGray">
         {PERMISSION_MESSAGE}
       </div>
 
-      <LongButton className="start-button" contents={CONFIRM} />
+      <LongButton classNameName="start-button" contents={CONFIRM} onClick={moveToRegisterLocationPage} />
     </div>
   );
 }

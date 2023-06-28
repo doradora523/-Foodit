@@ -4,9 +4,8 @@ import BackButton from './BackButton';
 
 function TextAndBackBar({ title }) {
   const navigate = useNavigate();
-  const handleMoveBack = () => {
-    navigate(-1);
-  };
+  const handleMoveBack = () => navigate(-1);
+
   return (
     <>
       <div className="mt-[47px] bg-white z-10">

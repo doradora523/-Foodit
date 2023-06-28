@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Div = styled.div`
-  background-color: ${(props) => props.color || '#2572E5'};
+  background-color: ${(props) => props.color || '#39B54A'};
 `;
 
 function FriendProfile({ name = '', role = '', svg, color }) {
