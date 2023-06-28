@@ -15,7 +15,7 @@ const RegisterCompletePage = () => {
     <>
       <TextBar title={'회원가입'} />
       <ImageAndMessage
-        color={'#2572E5'}
+        color={'#39B54A'}
         // image 추가할때 props 전달
         mainMessage={'회원가입 완료'}
         subMessage={

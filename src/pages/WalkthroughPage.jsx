@@ -4,12 +4,12 @@ import ImageAndMessage from '../components/common/ImageAndMessage';
 import LongButton from '../components/common/LongButton';
 
 const WalkthroughPage = () => {
-  const [carouselColor, setCarouselColor] = useState(['#2572e5', '#d9d9d9']);
+  const [carouselColor, setCarouselColor] = useState(['#39B54A', '#d9d9d9']);
   const [walkthroughPosition, setWalkthroughPosition] = useState(0);
   const [firstImageVisible, setFirstImageVisible] = useState(true);
 
   const PageChangeHandler = () => {
-    setCarouselColor(['#d9d9d9', '#2572e5']);
+    setCarouselColor(['#d9d9d9', '#39B54A']);
     setFirstImageVisible(false);
     if (firstImageVisible) {
       setTimeout(() => {

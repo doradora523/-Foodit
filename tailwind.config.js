@@ -12,7 +12,7 @@ module.exports = {
       darkGray: '#A4A4A4',
       deepGray: '#9D9D9D',
       smokeGray: '#6B6B6B',
-      mainColor: '#2572E5',
+      mainColor: '#39B54A',
       orange: '#FF6B00',
     },
   },

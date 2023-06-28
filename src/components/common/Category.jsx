@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Category({ svg, src, firstName, lastName = '' }) {
+function Category({ src, firstName, lastName = '' }) {
   // TODO: 하단 선택 버튼을 없애고 바로 홈으로
   const onClick = (selectedCategory) => {};
 
@@ -11,7 +11,6 @@ function Category({ svg, src, firstName, lastName = '' }) {
     >
       <button>
         <img alt="category" src={src} className="w-[49px] h-[49px]" />
-        {/* {svg} */}
       </button>
       <div className="mt-[7px] text-[13px]">{firstName}</div>
       <div className="mt-[-5px] text-[13px]">{lastName}</div>
