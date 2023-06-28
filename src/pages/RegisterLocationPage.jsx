@@ -1,5 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import CryptoJS from 'crypto-js';
+
 
 import NearLoacation from '../components/registerLocationPage/NearLoacation';
 import SearchBar from '../components/common/navBar/SearchBar';
@@ -8,10 +10,13 @@ import ShowCase from '../components/common/ShowCase';
 import { SEARCH_LOCATION, NEAR_LOCATION } from '../static/constants';
 
 function RegisterLocationPage() {
+  const REACT_APP_SECRET_KEY = process.env.REACT_APP_SECRET_KEY;
+
   const navigate = useNavigate();
   const onClick = () => {
     navigate('/register-complete');
   };
+
   return (
     <div className="flex flex-col">
       <SearchBar placeholder={SEARCH_LOCATION} />
