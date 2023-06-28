@@ -15,8 +15,9 @@ const RegisterCompletePage = () => {
     <>
       <TextBar title={'회원가입'} />
       <ImageAndMessage
-        color={'#2572E5'}
-        // image 추가할때 props 전달
+        marginTop={'26px'}
+        color={'#39B54A'}
+        src={process.env.PUBLIC_URL + '/images/walkthrough.gif'}
         mainMessage={'회원가입 완료'}
         subMessage={
           <>

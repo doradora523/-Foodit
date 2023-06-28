@@ -10,6 +10,7 @@ import SignIn from './pages/SignInPage';
 import SplashScreen from './pages/SplashScreenPage';
 import Walkthrough from './pages/WalkthroughPage';
 import RegisterComplete from './pages/RegisterCompletePage';
+import RegisterLocation from './pages/RegisterLocationPage';
 import WritingPage from './pages/WritingPage';
 import CategoryListPage from './pages/CategoryListPage';
 import PostsPage from './pages/PostsPage';
@@ -19,7 +20,7 @@ import RegisterLocationCompletePage from './pages/RegisterLocationCompletePage';
 import CategoryPage from './pages/CategoryPage';
 import SearchPage from './pages/SearchPage';
 import MyPage from './pages/MyPage';
-import ProfileEditPage from './pages/ProfileEditPage';
+import EditProfilePage from './pages/EditProfilePage';
 
 function App() {
   return (
@@ -28,8 +29,10 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/register-location" element={<RegisterLocation />} />
           <Route path="/register-complete" element={<RegisterComplete />} />
           <Route path="/signin" element={<SignIn />} />
+          <Route path="/permission" element={<PermissionPage />} />
           <Route path="/splashscreen" element={<SplashScreen />} />
           <Route path="/walkthrough" element={<Walkthrough />} />
           <Route path="/chat" element={<Chat />} />
@@ -43,7 +46,7 @@ function App() {
           <Route path="/writing" element={<WritingPage />} />
           <Route path="/posts" element={<PostsPage />} />
           <Route path="/myPage" element={<MyPage />} />
-          <Route path="/profileEdit" element={<ProfileEditPage />} />
+          <Route path="/editProfile" element={<EditProfilePage />} />
         </Routes>
       </div>
     </div>

@@ -1,6 +1,5 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-
 import OptionalPermission from '../components/permissionPage/OptionalPermission';
 import LongButton from '../components/common/LongButton';
 
@@ -24,7 +23,9 @@ import {
 
 function PermissionPage() {
   const navigate = useNavigate();
-  const moveToRegisterLocationPage = () => navigate('/registerLocation');
+  const handleConfirm = () => {
+    navigate('/register-location');
+  };
 
   return (
     <div className="pt-[136px] relative">
@@ -122,7 +123,7 @@ function PermissionPage() {
         {PERMISSION_MESSAGE}
       </div>
 
-      <LongButton classNameName="start-button" contents={CONFIRM} onClick={moveToRegisterLocationPage} />
+      <LongButton className="start-button" contents={CONFIRM} onClick={handleConfirm} />
     </div>
   );
 }

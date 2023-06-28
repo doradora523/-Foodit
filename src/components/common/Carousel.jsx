@@ -6,7 +6,7 @@ const Circle = styled.div`
   height: 9px;
   border-radius: 50%;
   transition: all 0.3s;
-  background: ${(props) => props.background || '#2572E5'};
+  background: ${(props) => props.background || '#39B54A'};
 `;
 
 function Carousel({ carouselColor }) {

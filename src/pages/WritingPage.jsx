@@ -172,7 +172,6 @@ function WritingPage() {
           </button>
         </div>
       </div>
-
       <textarea
         placeholder={PLEASE_WRITE_TEXT}
         onChange={onChangeTextarea}

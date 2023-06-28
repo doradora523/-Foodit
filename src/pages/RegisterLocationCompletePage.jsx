@@ -15,7 +15,7 @@ const RegisterLocationCompletePage = () => {
     <div className="relative w-[390px] overflow-hidden">
       <TextAndBackBar title={'위치등록'} />
       <div className="mt-[-21px]">
-        <ImageAndMessage mainMessage={REGISTER_LOCATION_COMPLETE} color={'#2572e5'} />
+        <ImageAndMessage mainMessage={REGISTER_LOCATION_COMPLETE} color={'#39B54A'} />
       </div>
 
       <LongButton type={'button'} contents={MOVE_TO_HOME} onClick={moveToHomePage} />
