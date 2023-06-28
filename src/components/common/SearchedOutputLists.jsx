@@ -3,7 +3,7 @@ import SearchedOutput from './SearchedOutput';
 
 function SearchedOutputList() {
   return (
-    <div class="flex flex-col mx-[15px] mb-[27px] overflow-scroll gap-[20px] h-[520px]">
+    <div className="flex flex-col mx-[15px] mb-[27px] overflow-scroll gap-[20px] h-[520px]">
       <SearchedOutput />
       <SearchedOutput />
       <SearchedOutput />

@@ -5,11 +5,11 @@ function SearchBar({ placeholder }) {
   const moveToPermissionPage = () => {};
 
   return (
-    <div class="flex h-[44px] mt-[47px]">
+    <div className="flex h-[44px] mt-[47px]">
       <BackButton onClickHandler={moveToPermissionPage} />
       <input
         placeholder={placeholder}
-        class="w-[100%] mr-[15px] px-[27px] rounded-[5px] bg-lightGray placeholder-deepGray text-[13px]"
+        className="w-[100%] mr-[15px] px-[27px] rounded-[5px] bg-lightGray placeholder-deepGray text-[13px]"
       />
     </div>
   );

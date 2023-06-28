@@ -19,18 +19,18 @@ function SearchPage() {
   const [selectedCategory, setSelectedCategory] = useState(TOTAL_SEARCHED_OUTPUT);
 
   return (
-    <div class="flex flex-col">
+    <div className="flex flex-col">
       <SearchBar placeholder={ENTER_INPUT} placeholderColor={'white'} />
 
-      <div class="flex mx-[15px] mt-[15px] mb-[25px] justify-between items-center">
+      <div className="flex mx-[15px] mt-[15px] mb-[25px] justify-between items-center">
         {/* FIXME: height 상의 필요 */}
-        <div class="flex w-[152px] h-[30px] items-center justify-center rounded-[5px] bg-orange text-white text-[13px]">
+        <div className="flex w-[152px] h-[30px] items-center justify-center rounded-[5px] bg-orange text-white text-[13px]">
           {selectedCategory}
         </div>
         <Select defaultValue={selectedOption} options={options} onchange={setSelectedOption} />
       </div>
 
-      <div class="mx-[16px] mb-[15px] text-[13px]">총 {'280,787'}개</div>
+      <div className="mx-[16px] mb-[15px] text-[13px]">총 {'280,787'}개</div>
       <SearchedOutputList />
     </div>
   );
