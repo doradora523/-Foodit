@@ -11,7 +11,7 @@ function SearchBar({ placeholder }) {
       <BackButton />
       <input
         placeholder={placeholder}
-        class="w-[100%] mr-[15px] px-[27px] rounded-[5px] bg-[#F0F0F0] placeholder-gray text-[13px]"
+        className="w-[100%] mr-[15px] px-[27px] rounded-[5px] bg-[#F0F0F0] placeholder-gray text-[13px]"
       />
     </div>
   );
