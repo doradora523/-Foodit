@@ -1,20 +1,28 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Carousel from '../components/common/Carousel';
 import ImageAndMessage from '../components/common/ImageAndMessage';
 import LongButton from '../components/common/LongButton';
 
 const WalkthroughPage = () => {
-  const [carouselColor, setCarouselColor] = useState(['#39B54A', '#d9d9d9']);
+  const [carouselColor, setCarouselColor] = useState(['#00c92c', '#d9d9d9']);
   const [walkthroughPosition, setWalkthroughPosition] = useState(0);
   const [firstImageVisible, setFirstImageVisible] = useState(true);
+  const [buttonClicked, setButtonClicked] = useState(false);
+  const navigate = useNavigate();
 
-  const PageChangeHandler = () => {
-    setCarouselColor(['#d9d9d9', '#39B54A']);
-    setFirstImageVisible(false);
-    if (firstImageVisible) {
-      setTimeout(() => {
-        setWalkthroughPosition(-50);
-      }, 100);
+  const startHandler = () => {
+    if (buttonClicked) {
+      navigate('/signin');
+    } else {
+      setCarouselColor(['#d9d9d9', '#00c92c']);
+      setFirstImageVisible(false);
+      if (firstImageVisible) {
+        setTimeout(() => {
+          setWalkthroughPosition(-50);
+        }, 100);
+      }
+      setButtonClicked(true);
     }
   };
 
@@ -28,13 +36,13 @@ const WalkthroughPage = () => {
       >
         <ImageAndMessage
           opacity={firstImageVisible ? 1 : 0}
-          // image 추가할때 props 전달
+          src={process.env.PUBLIC_URL + '/images/walkthrough.gif'}
           mainMessage={'우리동네'}
           subMessage={
             <>
-              가까운 동네 친구들과 물건을
-              <br /> 나눠가져요 가까운 동네 친구들과
-              <br /> 물건을 나눠가져요
+              가까운 동네 친구들과
+              <br /> 혼자 사기 힘들었던 상품을
+              <br /> 이제 부담없이 나눠가져요
             </>
           }
         />
@@ -42,7 +50,7 @@ const WalkthroughPage = () => {
           opacity={firstImageVisible ? 0 : 1}
           imgLeft={'480px'}
           msgLeft={'470px'}
-          // image 추가할때 props 전달
+          src={process.env.PUBLIC_URL + '/images/walkthrough2.gif'}
           mainMessage={'함께사요'}
           color={'#EE0707'}
           subMessage={
@@ -60,7 +68,7 @@ const WalkthroughPage = () => {
         <Carousel carouselColor={carouselColor[0]} />
         <Carousel carouselColor={carouselColor[1]} />
       </div>
-      <LongButton type={'button'} contents={'시작하기'} onClick={PageChangeHandler} />
+      <LongButton type={'button'} contents={'시작하기'} onClick={startHandler} />
     </div>
   );
 };
