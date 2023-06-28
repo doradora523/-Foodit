@@ -48,6 +48,7 @@ const SignInPage = () => {
       <form className="input-wrapper flex flex-wrap justify-center mt-[122px]">
         <Input
           type={'text'}
+          value={email}
           placeholder={'아이디(이메일) 입력'}
           mb={'15px'}
           onChange={onChangeHandler}
@@ -55,6 +56,7 @@ const SignInPage = () => {
         />
         <Input
           type={'password'}
+          value={password}
           placeholder={'비밀번호 입력'}
           autoComplete={'autoComplete'}
           onChange={onChangeHandler}
@@ -65,8 +67,9 @@ const SignInPage = () => {
         )}
       </form>
       <LongButton type={'submit'} contents={'로그인'} bottom={'405px'} onClick={handleSignIn} />
-      <div className=" w-[76px] h-[44px] fixed top-[444px] left-1/2 translate-x-[-50%] cursor-pointer">
-        <p className="text-[13px] text-gray text-center leading-[44px]" onClick={handleMoveRegisterPage}>
+      <div className="w-full h-[44px] px-[15px] fixed top-[444px] left-1/2 translate-x-[-50%] flex flex-nowrap justify-between text-[13px] text-gray text-center leading-[44px]">
+        <p className="cursor-pointer">게스트 로그인</p>
+        <p className="cursor-pointer" onClick={handleMoveRegisterPage}>
           회원가입
         </p>
       </div>
