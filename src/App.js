@@ -21,6 +21,7 @@ import CategoryPage from './pages/CategoryPage';
 import SearchPage from './pages/SearchPage';
 import MyPage from './pages/MyPage';
 import EditProfilePage from './pages/EditProfilePage';
+import FavoriteCategories from './components/home/FavoriteCategories';
 
 function App() {
   return (
@@ -43,6 +44,7 @@ function App() {
           <Route path="/categoryList" element={<CategoryListPage />} />
           <Route path="/search" element={<SearchPage />} />
           <Route path="/category" element={<CategoryPage />} />
+          <Route path="/favorite-categories" element={<FavoriteCategories />} />
           <Route path="/writing" element={<WritingPage />} />
           <Route path="/posts" element={<PostsPage />} />
           <Route path="/myPage" element={<MyPage />} />
