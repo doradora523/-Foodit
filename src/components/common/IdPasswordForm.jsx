@@ -1,8 +1,8 @@
 import React from 'react';
 import Input from './Input';
 
-const IdPasswordForm = ({ key, label, type, value, onChange, color, errors, readOnly }) => {
-  // readOnly 사용시 readOnly={true} 내려주기
+const IdPasswordForm = ({ label, type, value, onChange, color, errors, readOnly }) => {
+  
   return (
     <div className="h-[77px] mb-[40px]">
       <label className="w-full text-[14px]" htmlFor={label}>
@@ -11,7 +11,6 @@ const IdPasswordForm = ({ key, label, type, value, onChange, color, errors, read
       <div className="relative mt-[10px]">
         <Input
           readOnly={type === 'email' ? readOnly : false}
-          key={key}
           name={label}
           autoComplete={type === 'password' ? 'new-password' : 'off'}
           type={type}
