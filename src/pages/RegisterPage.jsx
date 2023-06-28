@@ -114,7 +114,7 @@ const RegisterPage = () => {
       setPassword('');
       setPasswordCheck('');
       setErrors({});
-      navigate(`/register-complete`);
+      navigate(`/permission`);
     }
   };
 

@@ -39,7 +39,7 @@ const SignInPage = () => {
   };
 
   const handleMoveRegisterPage = () => {
-    navigate('/permission');
+    navigate('/register');
   };
 
   return (
