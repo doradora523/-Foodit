@@ -5,9 +5,15 @@ const StyledInput = styled.input`
   width: ${(props) => props.width || '360px'};
   margin-bottom: ${(props) => props.mb || 0};
   border-color: ${(props) => props.color};
+  background: ${(props) => (props.readOnly ? '#ccc' : '#fff')};
+  color: ${(props) => (props.readOnly ? '#6B6B6B' : '#6B6B6B')};
+
+  &:focus {
+    outline: ${(props) => (props.readOnly ? 'none' : '')};
+  }
 `;
 
-function Input({ type, onChange, placeholder, name, width, mb, color, autoComplete }) {
+function Input({ type, onChange, placeholder, name, width, mb, color, autoComplete, readOnly }) {
   return (
     <StyledInput
       className="h-[48px] border-[1px] border-solid border-gray rounded-[10px] text-[14px] indent-[20px] placeholder-[#d9d9d9]"
@@ -19,6 +25,7 @@ function Input({ type, onChange, placeholder, name, width, mb, color, autoComple
       autoComplete={autoComplete}
       onChange={onChange}
       color={color}
+      readOnly={readOnly}
     />
   );
 }

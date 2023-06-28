@@ -9,7 +9,6 @@ import {
   CATEGORY,
   TOTAL_AMOUNT,
   MAXIMUM_PEOPLE,
-  DESIRED_PLACE,
   PLEASE_WRITE_TEXT,
   DONE,
 } from '../static/constants';
@@ -83,8 +82,6 @@ function WritingPage() {
           </button>
         </div>
       </div>
-
-      <Input placeholder={DESIRED_PLACE} />
       <textarea
         placeholder={PLEASE_WRITE_TEXT}
         class="w-[92%] h-[140px] py-[20px] mx-[15px] focus:outline-none text-[13px] text-darkGray"

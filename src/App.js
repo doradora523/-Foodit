@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import './styles/App.css';
 import 'tailwindcss/tailwind.css';
 
@@ -19,21 +19,19 @@ function App() {
   return (
     <div className="App">
       <div className="page-wrapper">
-        <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/register" element={<Register />} />
-            <Route path="/register-complete" element={<RegisterComplete />} />
-            <Route path="/signin" element={<SignIn />} />
-            <Route path="/splashscreen" element={<SplashScreen />} />
-            <Route path="/walkthrough" element={<Walkthrough />} />
-            <Route path="/chat" element={<Chat />} />
-            <Route path="/chatlist" element={<ChatList />} />
-            <Route path="/writingPage" element={<WritingPage />} />
-            <Route path="/categoryListPage" element={<CategoryListPage />} />
-            <Route path="/postsPage" element={<PostsPage />} />
-          </Routes>
-        </BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/register-complete" element={<RegisterComplete />} />
+          <Route path="/signin" element={<SignIn />} />
+          <Route path="/splashscreen" element={<SplashScreen />} />
+          <Route path="/walkthrough" element={<Walkthrough />} />
+          <Route path="/chat" element={<Chat />} />
+          <Route path="/chatlist" element={<ChatList />} />
+          <Route path="/writingPage" element={<WritingPage />} />
+          <Route path="/categoryListPage" element={<CategoryListPage />} />
+          <Route path="/postsPage" element={<PostsPage />} />
+        </Routes>
       </div>
     </div>
   );

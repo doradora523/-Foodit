@@ -8,7 +8,8 @@ const SignInPage = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [loginSuccess, setLoginSuccess] = useState(false);
-  const [errorMessgae, setErrorMessage] = useState('일치하는 회원정보가 없거나, 비밀번호가 일치하지 않습니다.');
+  const [errorMessage, setErrorMessage] = useState('');
+  const [isButtonClicked, setIsButtonClicked] = useState(false);
 
   const navigate = useNavigate();
 
@@ -24,18 +25,17 @@ const SignInPage = () => {
   };
 
   const handleSignIn = () => {
+    setIsButtonClicked(true);
     try {
       // API 호출 및 응답 받기
       if (loginSuccess) {
         navigate('/');
       } else {
         console.log('로그인 실패');
+        setErrorMessage('일치하는 회원정보가 없거나, 비밀번호가 일치하지 않습니다.');
+        setLoginSuccess(false);
       }
-    } catch (error) {
-      console.error('로그인 에러:', error);
-      setErrorMessage(error.message);
-      setLoginSuccess(false);
-    }
+    } catch (error) {}
   };
 
   const handleMoveRegisterPage = () => {
@@ -51,17 +51,17 @@ const SignInPage = () => {
           placeholder={'아이디(이메일) 입력'}
           mb={'15px'}
           onChange={onChangeHandler}
-          color={!loginSuccess ? '#ff0000' : '#d9d9d9'}
+          color={isButtonClicked && !loginSuccess ? '#ff0000' : '#d9d9d9'}
         />
         <Input
           type={'password'}
           placeholder={'비밀번호 입력'}
           autoComplete={'autoComplete'}
           onChange={onChangeHandler}
-          color={!loginSuccess ? '#ff0000' : '#d9d9d9'}
+          color={isButtonClicked && !loginSuccess ? '#ff0000' : '#d9d9d9'}
         />
-        {!loginSuccess && (
-          <span className="text-[13px] relative left-[-25px] mt-[15px] text-[#ff0000]">{errorMessgae}</span>
+        {!loginSuccess && isButtonClicked && (
+          <span className="text-[13px] relative left-[-25px] mt-[15px] text-[#ff0000]">{errorMessage}</span>
         )}
       </form>
       <LongButton type={'submit'} contents={'로그인'} bottom={'405px'} onClick={handleSignIn} />
