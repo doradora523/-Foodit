@@ -10,6 +10,7 @@ import SignIn from './pages/SignInPage';
 import SplashScreen from './pages/SplashScreenPage';
 import Walkthrough from './pages/WalkthroughPage';
 import RegisterComplete from './pages/RegisterCompletePage';
+import RegisterLocation from './pages/RegisterLocationPage';
 import WritingPage from './pages/WritingPage';
 import CategoryListPage from './pages/CategoryListPage';
 import PostsPage from './pages/PostsPage';
@@ -28,8 +29,10 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/register-location" element={<RegisterLocation />} />
           <Route path="/register-complete" element={<RegisterComplete />} />
           <Route path="/signin" element={<SignIn />} />
+          <Route path="/permission" element={<PermissionPage />} />
           <Route path="/splashscreen" element={<SplashScreen />} />
           <Route path="/walkthrough" element={<Walkthrough />} />
           <Route path="/chat" element={<Chat />} />
