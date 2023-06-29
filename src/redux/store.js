@@ -5,6 +5,7 @@ import signinSlice from './slices/signinSlice';
 
 import { writingSlice } from './slices/writingSlice';
 import { selectedCategorySlice } from './slices/selectedCategorySlice';
+import { friendsSlice } from './slices/friendsSlice';
 
 export const store = configureStore({
   reducer: {
@@ -13,5 +14,6 @@ export const store = configureStore({
     signin: signinSlice,
     writing: writingSlice.reducer,
     selectedCategory: selectedCategorySlice.reducer,
+    friends: friendsSlice.reducer,
   },
 });
