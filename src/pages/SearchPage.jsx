@@ -153,10 +153,10 @@ function SearchPage() {
         searchedOutputList={
           selectedOption === '낮은 가격순'
             ? searchedOutputList
-                .filter((el) => el.name === selectedCategory)
+                .filter((el) => el.category === selectedCategory)
                 .sort((a, b) => parseInt(a.price) - parseInt(b.price))
             : searchedOutputList
-                .filter((el) => el.name === selectedCategory)
+                .filter((el) => el.category === selectedCategory)
                 .sort((a, b) => parseInt(b.price) - parseInt(a.price))
         }
       />
