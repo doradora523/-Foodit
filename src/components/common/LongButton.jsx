@@ -6,7 +6,7 @@ const ButtonWrapper = styled.div`
 `;
 
 const StyledButton = styled.button`
-  background: ${(props) => props.background || '#39B54A'};
+  background: ${(props) => props.background || '#00c92c'};
 `;
 
 function LongButton({ type, contents, onClick, background, bottom, customStyle }) {

@@ -10,17 +10,15 @@ import SignIn from './pages/SignInPage';
 import SplashScreen from './pages/SplashScreenPage';
 import Walkthrough from './pages/WalkthroughPage';
 import RegisterComplete from './pages/RegisterCompletePage';
-import RegisterLocation from './pages/RegisterLocationPage';
 import WritingPage from './pages/WritingPage';
-import CategoryListPage from './pages/CategoryListPage';
 import PostsPage from './pages/PostsPage';
 import PermissionPage from './pages/PermissionPage';
 import RegisterLocationPage from './pages/RegisterLocationPage';
-import RegisterLocationCompletePage from './pages/RegisterLocationCompletePage';
 import CategoryPage from './pages/CategoryPage';
 import SearchPage from './pages/SearchPage';
 import MyPage from './pages/MyPage';
 import EditProfilePage from './pages/EditProfilePage';
+import FavoriteCategories from './components/home/FavoriteCategories';
 
 function App() {
   return (
@@ -29,7 +27,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/register" element={<Register />} />
-          <Route path="/register-location" element={<RegisterLocation />} />
+          <Route path="/register-location" element={<RegisterLocationPage />} />
           <Route path="/register-complete" element={<RegisterComplete />} />
           <Route path="/signin" element={<SignIn />} />
           <Route path="/permission" element={<PermissionPage />} />
@@ -37,12 +35,9 @@ function App() {
           <Route path="/walkthrough" element={<Walkthrough />} />
           <Route path="/chat" element={<Chat />} />
           <Route path="/chatlist" element={<ChatList />} />
-          <Route path="/permission" element={<PermissionPage />} />
-          <Route path="/registerLocation" element={<RegisterLocationPage />} />
-          <Route path="/registerLocationComplete" element={<RegisterLocationCompletePage />} />
-          <Route path="/categoryList" element={<CategoryListPage />} />
           <Route path="/search" element={<SearchPage />} />
           <Route path="/category" element={<CategoryPage />} />
+          <Route path="/favorite-categories" element={<FavoriteCategories />} />
           <Route path="/writing" element={<WritingPage />} />
           <Route path="/posts" element={<PostsPage />} />
           <Route path="/myPage" element={<MyPage />} />
