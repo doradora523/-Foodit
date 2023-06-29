@@ -1,20 +1,16 @@
 import React, { useState } from 'react';
 
 function Category({ src, firstName, lastName = '' }) {
-  const [selectedCategory, setSelectedCategory] = useState(null);
+  const [selectedCategory, setSelectedCategory] = useState('');
 
-  // TODO: 하단 선택 버튼을 없애고 바로 홈으로
-  const onCategorySelect = (src, name) => {
-    setSelectedCategory(src, name);
+  const onCategorySelect = (name) => {
+    setSelectedCategory(name);
   };
 
-  const onClick = () => {};
-  
   return (
     <div
       className="flex flex-col items-center w-[1/5px] h-[90px] cursor-pointer"
-      // onClick={onCategorySelect(src, lastName === '' ? firstName : `${firstName}/${lastName}`)}
-      onClick={() => onClick(lastName === '' ? firstName : `${firstName}/${lastName}`)}
+      onClick={() => onCategorySelect(lastName === '' ? firstName : `${firstName}/${lastName}`)}
     >
       <button>
         <img alt="category" src={src} className="w-[49px] h-[49px]" />

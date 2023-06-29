@@ -56,7 +56,6 @@ function RegisterLocationPage() {
       <SearchBar placeholder={SEARCH_LOCATION} />
 
       <div className="flex items-center h-[29px] my-[20px] ml-[15px] font-semibold text-[12px]">{NEAR_LOCATION}</div>
-
       <ShowCase
         className="flex flex-col items-center gap-[13px]"
         contents={
