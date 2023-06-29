@@ -51,7 +51,7 @@ const SignInPage = () => {
       }
     } catch (error) {}
   };
-  
+
   // 회원가입 페이지 & 게스트 로그인 이동
   /** 게스트 로그인은 추후 서버에서 데이터 받아와서 연결 필요 */
   const handleMovePage = (route) => {
