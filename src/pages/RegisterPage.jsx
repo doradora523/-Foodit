@@ -2,6 +2,11 @@ import React, { useEffect, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { debounce } from 'lodash';
+import { saveUserInfo } from '../redux/api/authApi';
+import TextAndBackBar from '../components/common/navBar/TextAndBackBar';
+import LongButton from '../components/common/LongButton';
+import IdPasswordForm from '../components/common/IdPasswordForm';
+import { signupFailure, signupStart, signupSuccess } from '../redux/slices/authSlice';
 import {
   setEmail,
   setPassword,
@@ -10,10 +15,6 @@ import {
   setErrors,
   resetFields,
 } from '../redux/slices/registerSlice';
-import { signupAPI } from '../redux/api/authApi';
-import TextAndBackBar from '../components/common/navBar/TextAndBackBar';
-import LongButton from '../components/common/LongButton';
-import IdPasswordForm from '../components/common/IdPasswordForm';
 
 const RegisterPage = () => {
   const inputFields = [
@@ -32,14 +33,15 @@ const RegisterPage = () => {
   const navigate = useNavigate();
 
   // 회원가입 API 호출
-  const callSignupAPI = async () => {
+  const callSaveUserInfo = async () => {
     try {
-      await signupAPI({ email, password, nickname });
-      // 회원가입 성공 시 필요한 로직 추가
+      dispatch(signupStart());
+      await saveUserInfo({ email, password, nickname });
+      dispatch(signupSuccess({ email }));
       dispatch(resetFields());
       navigate(`/permission`);
     } catch (error) {
-      console.error(error);
+      dispatch(signupFailure(error.message));
     }
   };
 
@@ -124,7 +126,7 @@ const RegisterPage = () => {
     dispatch(setErrors(validationErrors));
 
     if (isFormValid) {
-      callSignupAPI();
+      callSaveUserInfo();
     }
   };
 

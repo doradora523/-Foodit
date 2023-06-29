@@ -76,18 +76,6 @@ export const login =
     }
   };
 
-export const signup =
-  ({ email, password, nickname }) =>
-  async (dispatch) => {
-    try {
-      dispatch(signupStart());
-      await signupAPI({ email, password, nickname });
-      dispatch(signupSuccess({ email }));
-    } catch (error) {
-      dispatch(signupFailure(error.message));
-    }
-  };
-
 export const logout = () => async (dispatch) => {
   try {
     dispatch(logoutStart());
