@@ -1,8 +1,7 @@
 import React from 'react';
-import { BEFORE, WON } from '../../static/constants';
+import { WON } from '../../static/constants';
 
 function SearchedOutput({ src, name, location, price }) {
-  // TODO: price에 콤마 추가해야할 수도
   return (
     <div className="flex">
       <img alt={'searchedImage'} src={src} className="w-[100px] rounded-[10px]" />
