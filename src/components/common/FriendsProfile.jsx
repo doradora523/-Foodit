@@ -7,6 +7,7 @@ function FriendsProfile() {
   let friendsList = useSelector((state) => state.friends.friendsList);
   let recruteList = JSON.parse(localStorage.getItem('recruteList'));
   let isJoin = JSON.parse(localStorage.getItem('isJoin'));
+  console.log(friendsList, recruteList);
 
   return (
     <div className="mt-[22px] flex items-center pb-[17px] gap-[20px] border-b-[0.5px] border-gray">
@@ -36,9 +37,9 @@ function FriendsProfile() {
         : recruteList.map((el, index) => (
             <FriendProfile
               key={index}
-              name={el === '파티원' && friendsList[index] ? '파티원' : el === '모집대기중' ? '모집대기중' : ''}
+              name={el === '파티원' || el === '모집대기중' ? el : ''}
               color={
-                el === '파티원' && friendsList[index]
+                el === '파티원'
                   ? index === 0
                     ? '#FF6B00'
                     : index === 1
