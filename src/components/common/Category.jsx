@@ -1,10 +1,16 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+
+import { selectedCategorySlice } from '../../redux/slices/selectedCategorySlice';
 
 function Category({ src, firstName, lastName = '' }) {
-  const [selectedCategory, setSelectedCategory] = useState('');
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const onCategorySelect = (name) => {
-    setSelectedCategory(name);
+    dispatch(selectedCategorySlice.actions.setCategory(name));
+    navigate('/search');
   };
 
   return (
