@@ -1,9 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit';
-import axios from 'axios';
+import { signInAPI, signupAPI, logoutAPI } from '../api/authApi';
 
 const initialState = {
   user: null,
-  loading: false,
+  isLoading: false,
   error: null,
 };
 
@@ -12,29 +12,41 @@ const authSlice = createSlice({
   initialState,
   reducers: {
     loginStart(state) {
-      state.loading = true;
+      state.isLoading = true;
       state.error = null;
     },
     loginSuccess(state, action) {
-      state.loading = false;
+      state.isLoading = false;
       state.user = action.payload;
       state.error = null;
     },
     loginFailure(state, action) {
-      state.loading = false;
+      state.isLoading = false;
+      state.error = action.payload;
+    },
+    logoutStart: (state) => {
+      state.isLoading = true;
+      state.error = null;
+    },
+    logoutSuccess: (state) => {
+      state.isLoading = false;
+      state.error = null;
+    },
+    logoutFailure: (state, action) => {
+      state.isLoading = false;
       state.error = action.payload;
     },
     signupStart(state) {
-      state.loading = true;
+      state.isLoading = true;
       state.error = null;
     },
     signupSuccess(state, action) {
-      state.loading = false;
+      state.isLoading = false;
       state.user = action.payload;
       state.error = null;
     },
     signupFailure(state, action) {
-      state.loading = false;
+      state.isLoading = false;
       state.error = action.payload;
     },
   },
@@ -44,55 +56,46 @@ export const {
   loginStart,
   loginSuccess,
   loginFailure,
+  logoutStart,
+  logoutSuccess,
+  logoutFailure,
   signupStart,
   signupSuccess,
   signupFailure,
 } = authSlice.actions;
 
-export default authSlice.reducer;
-
-const BASE_URL = 'http://localhost:8080/api/v1/';
-
-// 회원가입 API 호출
-export const signupAPI = async () => {
-  const { email, password, nickname } = this.state;
-  const userInfo = {
-    userId: email,
-    pw: password,
-    email: email,
-    name: nickname,
-  };
-  try {
-    const response = await axios.post(`${BASE_URL}/auth/join/Proc`, userInfo, {
-      headers: { 'Content-Type': 'application/json' },
-    });
-    const result = response.data;
-
-    if (result.TOKEN) {
-      localStorage.setItem('TOKEN', result.TOKEN);
-      localStorage.setItem('signin_id', userInfo.userId);
+export const login =
+  ({ email, password }) =>
+  async (dispatch) => {
+    try {
+      dispatch(loginStart());
+      await signInAPI({ email, password });
+      dispatch(loginSuccess({ email }));
+    } catch (error) {
+      dispatch(loginFailure(error.message));
     }
+  };
+
+export const signup =
+  ({ email, password, nickname }) =>
+  async (dispatch) => {
+    try {
+      dispatch(signupStart());
+      await signupAPI({ email, password, nickname });
+      dispatch(signupSuccess({ email }));
+    } catch (error) {
+      dispatch(signupFailure(error.message));
+    }
+  };
+
+export const logout = () => async (dispatch) => {
+  try {
+    dispatch(logoutStart());
+    await logoutAPI();
+    dispatch(logoutSuccess());
   } catch (error) {
-    console.error(error);
+    dispatch(logoutFailure(error.message));
   }
 };
 
-// 로그인 API 호출
-export const signInAPI = async (credentials) => {
-  try {
-    const response = await axios.post(`${BASE_URL}/auth/join/check`, credentials);
-    return response.data.user;
-  } catch (error) {
-    throw new Error(error.message);
-  }
-};
-
-// 로그아웃 API 호출
-export const logoutAPI = async () => {
-  try {
-    const response = await axios.post(`${BASE_URL}/logout`);
-    return response.data;
-  } catch (error) {
-    throw new Error(error.message);
-  }
-};
+export default authSlice.reducer;

@@ -9,6 +9,5 @@ export const store = configureStore({
     auth: authSlice,
     register: registerSlice,
     writing: writingSlice.reducer,
-
   },
 });

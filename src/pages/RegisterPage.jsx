@@ -1,11 +1,19 @@
 import React, { useEffect, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import { setEmail, setPassword, setPasswordCheck, setNickname, setErrors } from '../redux/slices/registerSlice';
+import { debounce } from 'lodash';
+import {
+  setEmail,
+  setPassword,
+  setPasswordCheck,
+  setNickname,
+  setErrors,
+  resetFields,
+} from '../redux/slices/registerSlice';
+import { signupAPI } from '../redux/api/authApi';
 import TextAndBackBar from '../components/common/navBar/TextAndBackBar';
 import LongButton from '../components/common/LongButton';
 import IdPasswordForm from '../components/common/IdPasswordForm';
-import { debounce } from 'lodash';
 
 const RegisterPage = () => {
   const inputFields = [
@@ -23,6 +31,19 @@ const RegisterPage = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
+  // 회원가입 API 호출
+  const callSignupAPI = async () => {
+    try {
+      await signupAPI({ email, password, nickname });
+      // 회원가입 성공 시 필요한 로직 추가
+      dispatch(resetFields());
+      navigate(`/permission`);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  // 유효성 검사 후 상태 업데이트
   const validateField = useCallback(
     debounce((name, value) => {
       const validationErrors = { ...errors };
@@ -79,6 +100,7 @@ const RegisterPage = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     const validationErrors = {};
+
     inputFields.forEach((field) => {
       if (field.id === 'email' && email.trim() === '') {
         validationErrors[field.id] = { message: `${field.label}를 입력해주세요.`, isError: true };
@@ -102,13 +124,7 @@ const RegisterPage = () => {
     dispatch(setErrors(validationErrors));
 
     if (isFormValid) {
-      console.log('회원가입이 완료되었습니다.');
-      dispatch(setNickname(''));
-      dispatch(setEmail(''));
-      dispatch(setPassword(''));
-      dispatch(setPasswordCheck(''));
-      dispatch(setErrors({}));
-      navigate(`/permission`);
+      callSignupAPI();
     }
   };
 

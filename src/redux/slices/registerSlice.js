@@ -32,9 +32,16 @@ const registerSlice = createSlice({
     setErrors: (state, action) => {
       state.errors = action.payload;
     },
+    resetFields: (state, action) => {
+      state.nickname = '';
+      state.email = '';
+      state.password = '';
+      state.passwordCheck = '';
+      state.errors = {};
+    },
   },
 });
 
-export const { setEmail, setPassword, setPasswordCheck, setNickname, setErrors } = registerSlice.actions;
+export const { setEmail, setPassword, setPasswordCheck, setNickname, setErrors, resetFields } = registerSlice.actions;
 
 export default registerSlice.reducer;
