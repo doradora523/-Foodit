@@ -1,6 +1,16 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const SplashScreenPage = () => {
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const moveToWalkthrough = setTimeout(() => {
+      navigate('/walkthrough');
+    }, 1500);
+    return () => clearTimeout(moveToWalkthrough);
+  }, [navigate]);
+
   return (
     <div className="relative w-full h-full flex flex-wrap flex-col">
       <h2 className="text-[19px] text-[#42210B] font-semibold leading-[29px] text-center mt-[228px]">
