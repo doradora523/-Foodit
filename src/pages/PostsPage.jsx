@@ -10,7 +10,6 @@ import { JOIN_ALERT, CONFIRM, CANCEL, SUM, WON, DIVISION, ACTUAL_PAYMENT_AMOUNT,
 
 function PostsPage() {
   const dispatch = useDispatch();
-  const [isJoin, setIsJoin] = useState(false);
 
   const imageUrl = JSON.parse(localStorage.getItem('imageUrl'));
   const title = JSON.parse(localStorage.getItem('title'));
@@ -41,16 +40,23 @@ function PostsPage() {
       reverseButtons: true,
     }).then((result) => {
       if (result.isConfirmed) {
-        setIsJoin(true);
+        localStorage.setItem('isJoin', true);
+        localStorage.setItem('recruteList', JSON.stringify(recruteList));
 
         const index = recruteList.findIndex((item) => item === '모집대기중');
+
         if (index !== -1) {
           recruteList[index] = '파티원';
-          dispatch(friendsSlice.actions.setRecruteList(recruteList));
+          localStorage.setItem('recruteList', JSON.stringify(recruteList));
+
+          let test = JSON.parse(localStorage.getItem('recruteList'));
+          dispatch(friendsSlice.actions.setRecruteList(test));
         }
       }
     });
   };
+
+  let isJoin = JSON.parse(localStorage.getItem('isJoin'));
 
   return (
     <div className="">
@@ -68,7 +74,7 @@ function PostsPage() {
 
       <div className="overflow-scroll h-[400px]">
         <div className="mx-[15px]">
-          <FriendsProfile maxPeople={maxPeople} isJoin={isJoin} />
+          <FriendsProfile />
         </div>
         <div className="mt-[15px] mx-[15px] mb-[3px] text-[16px] font-semibold">{title}</div>
         <div className="mx-[15px] text-[10px] text-smokeGray">{category}</div>

@@ -1,11 +1,12 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
 
+import { useSelector } from 'react-redux';
 import FriendProfile from './FriendProfile';
 
-function FriendsProfile({ isJoin }) {
+function FriendsProfile() {
   let friendsList = useSelector((state) => state.friends.friendsList);
-  let recruteList = useSelector((state) => state.friends.recruteList);
+  let recruteList = JSON.parse(localStorage.getItem('recruteList'));
+  let isJoin = JSON.parse(localStorage.getItem('isJoin'));
 
   return (
     <div className="mt-[22px] flex items-center pb-[17px] gap-[20px] border-b-[0.5px] border-gray">
@@ -46,7 +47,7 @@ function FriendsProfile({ isJoin }) {
                     ? '#FFD600'
                     : index === 3
                     ? '#EE0707'
-                    : '#F0F0F0'
+                    : '#EE0707'
                   : el === '모집대기중'
                   ? '#A4A4A4'
                   : '#F0F0F0'
