@@ -3,7 +3,13 @@ import { signInAPI, signupAPI, logoutAPI } from '../api/authApi';
 import { saveUserInfo } from '../api/authApi';
 
 const initialState = {
-  user: null,
+  user: {
+    id: '',
+    username: '',
+    password: '',
+    nickname: '',
+    address: '',
+  },
   isLoading: false,
   error: null,
 };
@@ -19,6 +25,7 @@ const authSlice = createSlice({
     loginSuccess(state, action) {
       state.isLoading = false;
       state.user = action.payload;
+      signInAPI(state.user);
       state.error = null;
     },
     loginFailure(state, action) {

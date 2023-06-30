@@ -13,7 +13,6 @@ function MyPage() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-
   /** 로그아웃 시도 */
   const handleLogout = async () => {
     try {

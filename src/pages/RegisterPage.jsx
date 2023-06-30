@@ -14,6 +14,7 @@ import {
   setErrors,
   resetFields,
 } from '../redux/slices/registerSlice';
+import { checkEmail } from '../redux/api/authApi';
 
 const RegisterPage = () => {
   const inputFields = [
@@ -43,24 +44,38 @@ const RegisterPage = () => {
     }
   };
 
+  // 사용자 이메일 체크
+  const handleCheckEmail = async (value) => {
+    try {
+      const result = await checkEmail(value);
+      return result === null;
+    } catch (error) {
+      console.error('사용자 이메일 체크 오류 :', error);
+      return false;
+    }
+  };
+
   // 유효성 검사 후 상태 업데이트
   const validateField = useCallback(
-    debounce((name, value) => {
+    debounce(async (name, value) => {
       const validationErrors = { ...errors };
       console.log(name, value);
       if (name === 'email') {
         dispatch(setEmail(value));
-        validationErrors.email = {
-          message:
-            value.trim() === ''
-              ? '아이디를 입력해주세요.'
-              : emailRegex.test(value)
-              ? value === existedEmail
-                ? '이미 사용중인 아이디입니다.'
-                : ''
-              : '유효한 이메일 형식이 아닙니다.',
-          isError: value.trim() === '' || !emailRegex.test(value) || value === existedEmail,
-        };
+        const isValidEmail = emailRegex.test(value);
+
+        if (!value.trim()) {
+          validationErrors.email = { message: '아이디를 입력해주세요.', isError: true };
+        } else if (!isValidEmail) {
+          validationErrors.email = { message: '유효한 이메일 형식이 아닙니다.', isError: true };
+        } else {
+          const isAvailable = await handleCheckEmail(value);
+          if (!isAvailable) {
+            validationErrors.email = { message: '이미 사용중인 아이디입니다.', isError: true };
+          } else {
+            validationErrors.email = { message: '', isError: false };
+          }
+        }
       } else if (name === 'password') {
         dispatch(setPassword(value));
         validationErrors.password = {

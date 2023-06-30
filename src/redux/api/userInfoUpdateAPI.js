@@ -12,7 +12,7 @@ export const UserInfoUpdate = async ({ newPassword, newNickname }) => {
     // TODO: 서버에 저장된 유저정보로 변경하기
     const storedPassword = localStorage.getItem('signup-password');
     const storedNickname = localStorage.getItem('signup-nickname');
-    
+
     // 새로운 값을 로컬 스토리지에 비동기적으로 저장하기
     if (newPassword !== undefined) {
       localStorage.setItem('signup-password', encryptedPassword);

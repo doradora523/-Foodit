@@ -22,7 +22,7 @@ function MyProfile({ cameraSvg = '', writingSvg }) {
   /** 닉네임 초기값 렌더링 */
   useEffect(() => {
     if (inputRef.current) {
-      inputRef.current.value = nickname; // Assign the initial value to the ref
+      inputRef.current.value = nickname;
     }
   }, [nickname]);
 
@@ -51,10 +51,10 @@ function MyProfile({ cameraSvg = '', writingSvg }) {
   const handleNicknameChange = useCallback(
     debounce((event) => {
       event.preventDefault();
-      const value = event.target.value;
+      const { value } = event.target;
 
       const validationErrors = { ...errors };
-      dispatch(setNewNickname(event.target.value));
+      dispatch(setNewNickname(value));
       validationErrors.newNickname = {
         message: value.trim() === '' ? '닉네임을 입력해주세요.' : '',
         isError: value.trim() === '',
