@@ -29,3 +29,28 @@ export const UserInfoUpdate = async ({ newPassword, newNickname }) => {
     throw new Error(error.message);
   }
 };
+
+// 사용자 회원정보 조회
+export const inquireUserInfoAPI = async ({ username }) => {
+  try {
+    const response = await axios.post(`${BASE_URL}/user/detail`, username);
+    const result = response.data;
+    console.log(result);
+    localStorage.setItem('username', result.username);
+    return result;
+  } catch (error) {
+    throw new Error(error.message);
+  }
+};
+
+// 사용자 정보(비밀번호) 변경
+export const updatePasswordAPI = async ({ username }) => {
+  try {
+    const response = await axios.post(`${BASE_URL}/user/modify`, username);
+    const result = response.data;
+    console.log(result);
+    return result;
+  } catch (error) {
+    throw new Error(error.message);
+  }
+};

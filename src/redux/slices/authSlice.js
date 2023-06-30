@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { signInAPI, signupAPI, logoutAPI } from '../api/authApi';
+import { signInAPI, signupAPI, logoutAPI, inquireUserInfoAPI } from '../api/authApi';
 import { saveUserInfo } from '../api/authApi';
 
 const initialState = {
@@ -38,6 +38,7 @@ const authSlice = createSlice({
     },
     logoutSuccess: (state) => {
       state.isLoading = false;
+      logoutAPI()
       state.error = null;
     },
     logoutFailure: (state, action) => {
@@ -72,17 +73,5 @@ export const {
   signupSuccess,
   signupFailure,
 } = authSlice.actions;
-
-export const login =
-  ({ email, password }) =>
-  async (dispatch) => {
-    try {
-      dispatch(loginStart());
-      await signInAPI({ email, password });
-      dispatch(loginSuccess({ email }));
-    } catch (error) {
-      dispatch(loginFailure(error.message));
-    }
-  };
 
 export default authSlice.reducer;

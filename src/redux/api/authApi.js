@@ -21,7 +21,7 @@ export const saveUserInfo = async ({ username, password, nickname }) => {
 // 사용자 아이디 검증
 export const checkEmail = async ({ email }) => {
   try {
-    const response = await axios.post(`${BASE_URL}/auth/join/check`, { email });
+    const response = await axios.post(`${BASE_URL}/auth/join/check`, email);
     const result = response.data;
     return result; // 서버로부터 중복 여부 확인 결과 반환
   } catch (error) {
@@ -62,7 +62,7 @@ export const signUpAPI = async ({ address }) => {
 // 로그인 API 호출
 export const signInAPI = async ({ email, password }) => {
   try {
-    const response = await axios.post(`${BASE_URL}/auth/join/check`, {
+    const response = await axios.post(`${BASE_URL}/auth/login`, {
       email,
       password,
     });
