@@ -2,7 +2,6 @@ import React, { useEffect, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { debounce } from 'lodash';
-import { saveUserInfo } from '../redux/api/authApi';
 import TextAndBackBar from '../components/common/navBar/TextAndBackBar';
 import LongButton from '../components/common/LongButton';
 import IdPasswordForm from '../components/common/IdPasswordForm';
@@ -33,11 +32,10 @@ const RegisterPage = () => {
   const navigate = useNavigate();
 
   // 회원가입 API 호출
-  const callSaveUserInfo = async () => {
+  const callSaveUserInfo = () => {
     try {
       dispatch(signupStart());
-      await saveUserInfo({ email, password, nickname });
-      dispatch(signupSuccess({ email }));
+      dispatch(signupSuccess({ email, password, nickname }));
       dispatch(resetFields());
       navigate(`/permission`);
     } catch (error) {
@@ -81,7 +79,7 @@ const RegisterPage = () => {
             value.trim() === ''
               ? '확인을 위하여 위와 동일하게 입력해주세요.'
               : value !== password
-              ? '비밀번호가 일치하지 않습니다.'
+              ? '비밀번호가 틀렸습니다. 다시 입력해주세요.'
               : '',
           isError: value.trim() === '' || value !== password,
         };

@@ -2,7 +2,7 @@ import axios from 'axios';
 import CryptoJS from 'crypto-js';
 
 const encryptionKey = process.env.REACT_APP_SECRET_KEY;
-const BASE_URL = 'http://localhost:8080/api/v1/';
+const BASE_URL = 'http://localhost:8080/api/v1';
 
 // 유저정보 암호화 후 로컬스토리지에 저장
 export const saveUserInfo = async ({ email, password, nickname }) => {
