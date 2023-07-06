@@ -2,6 +2,8 @@
 ![쿠키즈_최종산출물](https://github.com/doradora523/-Foodit/assets/94670754/706d8311-b903-4765-a169-67f33b40a375)
 
 ## Links
+[푸딧DEMO](http://223.130.131.215/)
+
 [Figma](https://www.figma.com/file/qDaPGBD7i6fvmwNMzNzAhj/%ED%8F%AC%ED%85%90%EB%8D%B0%EC%9D%B4?type=design&node-id=0-1&mode=design&t=V4JUb95BDgFiVHHp-0)
 
 [Notion](https://free-ceder-650.notion.site/e7a1260d23c84741899e1f8200b863fa)
