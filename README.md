@@ -10,6 +10,10 @@
 
 [푸딧PPT](https://github.com/doradora523/-Foodit/files/11971926/_.pdf)
 
+## Stacks
+```
+React, Redux-Toolkit, Axios, TailwindCSS, Styled-Components, Crypto-js
+```
 
 ## Description
 
