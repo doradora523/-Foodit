@@ -1,8 +1,11 @@
-![쿠키즈_최종산출물.jpg](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/478a7001-4f34-4a55-9c22-0631ec055f49/%E1%84%8F%E1%85%AE%E1%84%8F%E1%85%B5%E1%84%8C%E1%85%B3_%E1%84%8E%E1%85%AC%E1%84%8C%E1%85%A9%E1%86%BC%E1%84%89%E1%85%A1%E1%86%AB%E1%84%8E%E1%85%AE%E1%86%AF%E1%84%86%E1%85%AE%E1%86%AF.jpg)
+
+![쿠키즈_최종산출물](https://github.com/doradora523/-Foodit/assets/94670754/706d8311-b903-4765-a169-67f33b40a375)
 
 ## Links
 [Figma](https://www.figma.com/file/qDaPGBD7i6fvmwNMzNzAhj/%ED%8F%AC%ED%85%90%EB%8D%B0%EC%9D%B4?type=design&node-id=0-1&mode=design&t=V4JUb95BDgFiVHHp-0)
+
 [Notion](https://free-ceder-650.notion.site/e7a1260d23c84741899e1f8200b863fa)
+
 [푸딧PPT](https://github.com/doradora523/-Foodit/files/11971926/_.pdf)
 
 
