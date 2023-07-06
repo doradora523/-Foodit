@@ -56,3 +56,58 @@
 
 - 이번 프로젝트에서는 기획자, 디자이너, 프론트엔드, 백엔드 4개의 직군이 함께 협업하여 10일 동안 작업을 진행했습니다. 짧은 기간 동안 우선순위를 정하고 기능을 구현하였으나 기간에 비해 프로젝트 사이즈가 컸기에 완성되지 않은 상태로 제출하게 되었습니다. 그러나 팀원들과의 소통과 협업이 원활하여 프로젝트가 미완성으로 끝나는 것이 아닌 이후에도 완성도를 높이기 위해 노력하고 있습니다. 특히 채팅 기능 및 추가 기능을 구현하여 프로젝트를 완성하기 위해 지속적으로 개발중에 있습니다.
 - 다른 프론트엔드 개발자의 코드를 리뷰하면서 constants.js에 text를 변수에 담아 설정하는 부분이 인상 깊었습니다. 이러한 관리 방식을 적용하면 코드의 가독성과 유지보수성을 향상시킬 수 있다는 것을 알게 되었습니다.
+
+
+### 👩🏻‍💻개발자
+
+![6.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/6dece0c8-8100-424f-8bce-62a7b10d043f/6.png)
+
+**김은지**
+
+web back-end developers
+
+#JAVA #React-js #Node-js #SpringBoot
+
+### 👩🏻‍💻개발자
+
+![10.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/628da504-d2c6-4211-af9c-9e8d8ebb3404/10.png)
+
+**조수경**
+
+web front-end
+developers
+
+#React-js #Node-js #JAavascript #Next-js #Typescript
+
+### 👩🏻‍💻개발자
+
+![3.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/cc728592-295b-443b-8e08-598ee7e19fa1/3.png)
+
+**고희주**
+
+web front-end
+developers
+
+#React-js #Node-js #JAavascript #Typescript
+
+### 👩🏻‍🎨디자이너
+
+![1.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/3fb2d29f-ea68-4b89-a13f-36e1f54bb886/1.png)
+
+**한희하**
+
+web designer
+UI/UX design
+
+#Figma #Wireframe #Adobe
+
+### 👩🏻‍🏫기획자
+
+![9 (1).png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/f8a5bfa5-fce1-4488-ba7a-f97520408a33/9_(1).png)
+
+**강지승**
+
+service planner
+PM 꿈나무
+
+#IA #기능정의 #일정관리 #기획 #서비스운영
